@@ -5,6 +5,7 @@ import { lazy } from "react";
 const HomePage = lazy(() => import("./pages/HomePage"));
 
 function App() {
+  
   return (
     <>
       <BrowserRouter>
