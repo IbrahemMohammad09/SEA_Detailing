@@ -4,7 +4,7 @@ import { MdOutlineMail } from "react-icons/md";
 import './ContactUs.css'
 export default function ContactUs(){
     return<>
-        <div className=" bg-[#EAEEF3] pt-7 pb-28">
+        <div className=" bg-[#EAEEF3] pt-7 mt-44 pb-28">
             <div className=" flex flex-col justify-center items-center text-center">
                <p className="abhaya-libre-bold text-6xl mb-16">Contact <span className="text-[#1A78F2]">Us</span></p> 
                <p className="abhaya-libre-regular px-2 md:px-0 text-base text-[#2B3641] mb-44 max-w-[670px]">If you call during our business hours you’ll get through to us instantly. If you email, 
