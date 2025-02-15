@@ -1,14 +1,23 @@
-import './App.css'
-import React from "react";
-import Footer from './assets/Sections/Footer'
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { lazy } from "react";
+
+const HomePage = lazy(() => import("./pages/HomePage"));
+const ContactUs = lazy(() => import("./sections/ContactUs"));
+
 function App() {
-
-
+  
   return (
-        <>
-         <Footer/>
-        </>
-  )
+
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<HomePage />} />
+          <Route path="/contact-us" element={< ContactUs/>} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
 }
 
-export default App
+export default App;
