@@ -4,16 +4,14 @@ import { lazy } from "react";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 
-
 function App() {
   
   return (
-
     <>
       <BrowserRouter>
         <Routes>
           <Route index element={<HomePage />} />
-         
+
         </Routes>
       </BrowserRouter>
     </>
