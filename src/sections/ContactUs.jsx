@@ -19,14 +19,17 @@ export default function ContactUs(){
                 </div>
                 <div className="flex gap-2 items-center lg:w-1/3">
                 <FiPhone className="text-[#2B3641] w-5 hover:text-[#1A78F2] " />
-                   <a href ='tel:647-673-9380/ 647-273-0008' target="_blank"  className="text-[#12153A] Abhaya-libre-regular text-base hover:text-[#1A78F2]" >647-673-9380/ 647-273-0008</a>
+                   <a href ='tel:647-673-9380/ 647-273-0008' target="_blank"  className="text-[#12153A] Abhaya-libre-regular text-base hover:text-[#1A78F2]" >
+                    647-673-9380/ 647-273-0008</a>
                 </div>
                 <div className="flex gap-2 items-center  lg:w-1/3">
                 <MdOutlineMail className="text-[#2B3641] w-5 hover:text-[#1A78F2]" />
-                <a href="mailto:info@detailingcar.com"target="_blank" className="text-[#12153A] Abhaya-libre-regular text-base hover:text-[#1A78F2] ">info@detailingcar.com</a>
+                <a href="mailto:info@detailingcar.com"target="_blank" className="text-[#12153A] Abhaya-libre-regular text-base hover:text-[#1A78F2] ">
+                    info@detailingcar.com</a>
                 </div>
             </div>
         </div>
+        
     
     </>
 }
