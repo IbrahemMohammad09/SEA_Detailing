@@ -2,6 +2,7 @@ import locationicon from "../assets/image/locationicon.svg"
 import { FiPhone } from "react-icons/fi";
 import { MdOutlineMail } from "react-icons/md";
 import './ContactUs.css'
+
 export default function ContactUs(){
     return<>
         <div className=" bg-[#EAEEF3] pt-7 mt-44 pb-28">
@@ -11,18 +12,18 @@ export default function ContactUs(){
                 we’ll usually get back to you within the same business day. Our client services team members 
                 are eager to answer all of your cleaning services questions.</p>
             </div>
-            <div className="flex flex-col md:items-start gap-11 md:flex-row pl-16 contact-child2">
-                <div className="flex gap-2 items-start lg:w-1/3 ">
+            <div className="flex flex-col justify-evenly gap-2 px-2.5  md:items-start md:flex-row md:pr-60 contact-child2">
+                <div className="flex gap-2 items-start  lg:w-1/3 ">
                     <img className="w-4" src={locationicon} alt="location-icon"/>
-                    <a href="#" className=" text-[#12153A] Aabhaya-libre-regular text-base hover:text-[#1A78F2]">Toronto, North York, Vaughan, Richmondhill, Maple, Oakville, Markham, Ajax, Mississauga, 
+                    <a href="#" className=" text-[#12153A] Aabhaya-libre-regular max-w-[500px] text-base hover:text-[#1A78F2]">Toronto, North York, Vaughan, Richmondhill, Maple, Oakville, Markham, Ajax, Mississauga, 
                     Brampton, Oshawa, Aurora, Newmarket</a>
                 </div>
-                <div className="flex gap-2 items-center lg:w-1/3">
+                <div className="flex gap-2 items-center ">
                 <FiPhone className="text-[#2B3641] w-5 hover:text-[#1A78F2] " />
-                   <a href ='tel:647-673-9380/ 647-273-0008' target="_blank"  className="text-[#12153A] Abhaya-libre-regular text-base hover:text-[#1A78F2]" >
+                   <a href ='tel:647-673-9380/ 647-273-0008' target="_blank"  className="text-[#12153A] Abhaya-libre-regular text-base hover:text-[#1A78F2] my-4 md:my-0" >
                     647-673-9380/ 647-273-0008</a>
                 </div>
-                <div className="flex gap-2 items-center  lg:w-1/3">
+                <div className="flex gap-2 items-center ">
                 <MdOutlineMail className="text-[#2B3641] w-5 hover:text-[#1A78F2]" />
                 <a href="mailto:info@detailingcar.com"target="_blank" className="text-[#12153A] Abhaya-libre-regular text-base hover:text-[#1A78F2] ">
                     info@detailingcar.com</a>
