@@ -22,7 +22,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 lg:px-36 xl:px-52 md:px-10  transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-10 lg:px-36 xl:px-52 md:px-10  transition-all duration-300 ${
         isScrolled ? "bg-white shadow-lg py-0" : "bg-transparent py-4"
       }`}
     >
@@ -53,7 +53,7 @@ const Navbar = () => {
       </div>
 
       {/* القائمة للشاشات الكبيرة */}
-      <ul className="hidden md:flex text-2xl z-50 sm:space-x-10 md:space-x-20 text-gray-800 abhaya-libre-extrabold">
+      <ul className="hidden md:flex text-2xl z-40 sm:space-x-10 md:space-x-20 text-gray-800 abhaya-libre-extrabold">
         <li>
           <a href="#" className="hover:text-[#1A78F2] transition-colors">
             Home
@@ -81,7 +81,7 @@ const Navbar = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : -20 }}
         transition={{ duration: 0.3 }}
-        className={`absolute z-50  left-[10%] rounded-2xl h-48 text-center w-[80%] text-xl bg-white shadow-md md:hidden text-gray-800 
+        className={`absolute z-40  left-[10%] rounded-2xl h-48 text-center w-[80%] text-xl bg-white shadow-md md:hidden text-gray-800 
           ${isScrolled ? "top-16" : "top-24"}
           ${isOpen ? "block" : "hidden"}
         
