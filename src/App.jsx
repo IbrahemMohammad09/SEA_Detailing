@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, useState, useEffect } from "react";
-// import GifLoader from "./components/GifLoader";
+
 const GiftLoader = lazy (() => import('./components/GifLoader'))
 const HomePage = lazy(() => import("./pages/HomePage"));
 
