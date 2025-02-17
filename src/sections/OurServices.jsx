@@ -79,6 +79,27 @@ function OurServices() {
         Car <span className="text-blue-500">DETAILING &</span> clean house
       </h2>
 
+      <div className="flex justify-center mt-20 space-x-4 mb-8">
+        {[
+          { label: "Car Services", value: "car" },
+          { label: "All", value: "all" },
+          { label: "Home Services", value: "home" },
+        ].map(({ label, value }) => (
+          <button
+            key={value}
+            onClick={() => setFilter(value)}
+            className={`px-6 py-2 cursor-pointer rounded-full transition duration-300 text-white font-semibold 
+            ${
+              filter === value
+                ? "bg-gradient-to-r from-blue-500 to-blue-700"
+                : "bg-blue-500 hover:bg-blue-600"
+            }`}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
+
       <AnimatePresence>
         <div className="grid grid-cols-1 abhaya-libre-medium md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center items-start grid-auto-rows-fr">
           {filteredServices.map((service, index) => (
@@ -113,26 +134,7 @@ function OurServices() {
         </div>
       </AnimatePresence>
 
-      <div className="flex justify-center mt-20 space-x-4 mb-8">
-        {[
-          { label: "Car Services", value: "car" },
-          { label: "All", value: "all" },
-          { label: "Home Services", value: "home" },
-        ].map(({ label, value }) => (
-          <button
-            key={value}
-            onClick={() => setFilter(value)}
-            className={`px-6 py-2 cursor-pointer rounded-full transition duration-300 text-white font-semibold 
-            ${
-              filter === value
-                ? "bg-gradient-to-r from-blue-500 to-blue-700"
-                : "bg-blue-500 hover:bg-blue-600"
-            }`}
-          >
-            {label}
-          </button>
-        ))}
-      </div>
+      
 
       <div className="flex justify-center mt-8">
         <button className="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-6 py-2 rounded-full hover:scale-105 transition duration-300">
