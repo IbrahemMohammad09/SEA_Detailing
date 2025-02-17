@@ -1,20 +1,31 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { lazy } from "react";
-import GifLoader from "./components/GifLoader";
+import { lazy, useState, useEffect } from "react";
+// import GifLoader from "./components/GifLoader";
+const GiftLoader = lazy (() => import('./components/GifLoader'))
 const HomePage = lazy(() => import("./pages/HomePage"));
 
 function App() {
-  return (
-    <>
-      <BrowserRouter>
-        <GifLoader />
+  const [isLoading, setIsLoading] = useState(true); 
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false); 
+    }, 2200);
+
+    return () => clearTimeout(timer); 
+  }, []);
+
+  return (
+    <BrowserRouter>
+      {isLoading ? (
+        <GiftLoader />
+      ) : (
         <Routes>
           <Route index element={<HomePage />} />
         </Routes>
-      </BrowserRouter>
-    </>
+      )}
+    </BrowserRouter>
   );
 }
 

@@ -81,8 +81,8 @@ function OurServices() {
 
       <div className="flex justify-center mt-20 space-x-4 mb-8">
         {[
-          { label: "Car Services", value: "car" },
           { label: "All", value: "all" },
+          { label: "Car Services", value: "car" },
           { label: "Home Services", value: "home" },
         ].map(({ label, value }) => (
           <button
