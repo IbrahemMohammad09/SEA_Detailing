@@ -6,7 +6,7 @@ import "./BookNowRadio.css";
 
 const BookNow = () => {
   return (
-    <div className="py-12 -mt-[100%] sm:mt-0 xl:mt-0 2xl:mt-52">
+    <div className="py-12 -mt-[400px] sm:-mt-[200px] md:mt-20 xl:mt-0 2xl:mt-52">
       {/* القسم الرئيسي */}
       <div className="container mx-auto px-4">
         {/* إضافة shadow-neon-blue هنا */}
