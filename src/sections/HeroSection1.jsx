@@ -6,7 +6,7 @@ import Pattern1 from "../assets/HeroSection1/pattern.png";
 
 function HeroSection1() {
   return (
-    <section className="relative mt-20 md:mt-64">
+    <section id="home" className="relative mt-20 md:mt-64">
       {/* Pattern1 Background Images */}
       <img
         src={Pattern1}

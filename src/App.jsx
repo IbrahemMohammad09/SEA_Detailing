@@ -1,13 +1,14 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { lazy, useState, useEffect } from "react";
 
 const GiftLoader = lazy(() => import("./components/GifLoader"));
 const HomePage = lazy(() => import("./pages/HomePage"));
 const BookService = lazy(() => import("./pages/BookService"));
 
-const DashboardLogin = lazy(()=> import('./components/dashboard/Login'))
+const DashboardLogin = lazy(() => import("./components/dashboard/Login"));
 
+import NotFoundPage from "./pages/Error";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -23,8 +24,13 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index element={isLoading ? <GiftLoader /> : <HomePage />} />
-        <Route path="/book-service" element={isLoading ? <GiftLoader /> : <BookService />} />
+        <Route
+          path="/book-service"
+          element={isLoading ? <GiftLoader /> : <BookService />}
+        />
         <Route path="/login" element={<DashboardLogin />} />
+        <Route path="/error" element={<NotFoundPage />} />
+        <Route path="*" element={<Navigate to="/error" replace />} />
       </Routes>
     </BrowserRouter>
   );

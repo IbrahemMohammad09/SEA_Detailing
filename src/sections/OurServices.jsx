@@ -1,9 +1,10 @@
-import { useState } from "react";
+// OurServices.jsx
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useSearchParams, Link } from "react-router-dom"; // تأكد من استيراد Link من react-router-dom
 import image1 from "../assets/OurServices/01e36d90c7d4867eed0b3b77bc0d363f.jpeg";
 import image2 from "../assets/OurServices/3fc85fa235aef293febf4a65565953cb.jpeg";
 import image3 from "../assets/OurServices/f429094570dd7d1caebf84042038d7a5.jpeg";
-import { Link } from "react-router";
 
 const servicesData = [
   {
@@ -65,14 +66,22 @@ const servicesData = [
 ];
 
 function OurServices() {
-  const [filter, setFilter] = useState("all");
+  const [searchParams] = useSearchParams();
+  const initialFilter = searchParams.get("filter") || "all";
+  const [filter, setFilter] = useState(initialFilter);
+
+  useEffect(() => {
+    const newFilter = searchParams.get("filter") || "all";
+    setFilter(newFilter);
+  }, [searchParams]);
+
   const filteredServices =
     filter === "all"
       ? servicesData
       : servicesData.filter((service) => service.type === filter);
 
   return (
-    <div className="container   mx-auto px-4 py-8 ">
+    <div id="our-services" className="container mx-auto px-4 py-8">
       <h2 className="text-3xl mt-10 md:text-5xl font-bold text-center mb-4 abhaya-libre-bold">
         OUR <span className="text-blue-500">SERVICES</span>
       </h2>
@@ -111,18 +120,19 @@ function OurServices() {
               exit={{ opacity: 0, x: 50 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`bg-white p-6 rounded-4xl shadow-2xl flex items-center relative transition duration-300 
-        shadow-blue-400 hover:shadow-blue-500 hover:shadow-xl 
-        ${
-          filteredServices.length % 3 !== 0 &&
-          index >= filteredServices.length - (filteredServices.length % 3)
-            ? " lg:left-40 xl:left-52 2xl:left-60 "
-            : ""
-        }`}
+                shadow-blue-400 hover:shadow-blue-500 hover:shadow-xl 
+                ${
+                  filteredServices.length % 3 !== 0 &&
+                  index >=
+                    filteredServices.length - (filteredServices.length % 3)
+                    ? " lg:left-40 xl:left-52 2xl:left-60 "
+                    : ""
+                }`}
             >
               <img
                 src={service.image}
                 alt={service.title}
-                className="w-16 h-16 md:w-28 md:h-28 rounded-full mr-4 "
+                className="w-16 h-16 md:w-28 md:h-28 rounded-full mr-4"
               />
               <div>
                 <h3 className="text-xl md:text-2xl font-semibold text-blue-500">
@@ -135,10 +145,11 @@ function OurServices() {
         </div>
       </AnimatePresence>
 
-      
-
       <div className="flex justify-center mt-8">
-        <Link to={"/book-service"} className="bg-gradient-to-r from-blue-500 to-blue-700 text-white mt-10 px-14 py-4 rounded-full hover:scale-105 transition duration-300">
+        <Link
+          to={"/book-service"}
+          className="bg-gradient-to-r from-blue-500 to-blue-700 text-white mt-10 px-14 py-4 rounded-full hover:scale-105 transition duration-300"
+        >
           Book Services
         </Link>
       </div>
