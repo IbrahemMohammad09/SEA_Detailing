@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 .abhaya-libre-regular {
   font-family: "Abhaya Libre", serif;
   font-weight: 400;
