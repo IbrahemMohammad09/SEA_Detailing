@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import image1 from "../assets/OurServices/01e36d90c7d4867eed0b3b77bc0d363f.jpeg";
 import image2 from "../assets/OurServices/3fc85fa235aef293febf4a65565953cb.jpeg";
 import image3 from "../assets/OurServices/f429094570dd7d1caebf84042038d7a5.jpeg";
+import { Link } from "react-router";
 
 const servicesData = [
   {
@@ -137,9 +138,9 @@ function OurServices() {
       
 
       <div className="flex justify-center mt-8">
-        <button className="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-6 py-2 rounded-full hover:scale-105 transition duration-300">
+        <Link to={"/book-service"} className="bg-gradient-to-r from-blue-500 to-blue-700 text-white mt-10 px-14 py-4 rounded-full hover:scale-105 transition duration-300">
           Book Services
-        </button>
+        </Link>
       </div>
     </div>
   );

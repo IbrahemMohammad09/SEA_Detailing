@@ -5,11 +5,13 @@ import AboutUs from "../sections/AboutUs";
 import ContactUs from "../sections/ContactUs";
 import HeroSection2 from "../sections/HeroSection2";
 import OurServices from "../sections/OurServices";
+import MainTitle from "../components/MainTitle";
 
 function HomePage() {
   return (
     <>
       <div>
+        <MainTitle title={"Home"}/>
         <Navbar />
         <HeroSection1 />
         <HeroSection2 />

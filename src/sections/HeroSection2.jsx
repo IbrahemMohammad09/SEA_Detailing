@@ -3,6 +3,7 @@ import image2 from "../assets/HeroSection2/e239695702d887addeaee6ebe0568b87.png"
 import image3 from "../assets/HeroSection2/HappyClient.png";
 import path from "../assets/HeroSection2/path.png";
 import pattern from "../assets/HeroSection1/pattern.png";
+import { Link } from "react-router";
 
 function HeroSection2() {
   const steps = [
@@ -48,9 +49,9 @@ function HeroSection2() {
 
           {/* القسم الأيمن */}
           <div className="text-center md:text-start md:pl-20 lg:text-2xl w-full md:w-1/3">
-            <button className="bg-blue-500 text-white px-10 py-2 rounded-full hover:bg-blue-600 transition duration-300 cursor-pointer">
+            <Link to={"/book-service"}  className="bg-blue-500 text-white px-10 py-2 rounded-full hover:bg-blue-600 transition duration-300 cursor-pointer">
               Book Service
-            </button>
+            </Link>
           </div>
         </div>
       </div>
