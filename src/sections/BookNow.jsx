@@ -101,7 +101,7 @@ const BookNow = () => {
                     htmlFor="address"
                     className="absolute poppins-bold -top-6 left-0 text-sm text-gray-500 font-bold transition-all duration-300"
                   >
-                    The address
+                    Address
                   </label>
                   <input
                     type="text"
@@ -169,8 +169,7 @@ const BookNow = () => {
                   </label>
                 </div>
                 <p className="text-sm font-bold text-gray-500 ml-6">
-                  – Bring your car to our center and enjoy a professional
-                  cleaning service by our experts.
+                  – Bring your car, motorcycle, or any item to our center and experience top-tier professional cleaning services by our experts.
                 </p>
                 <div className="flex items-center">
                   <input
@@ -189,8 +188,7 @@ const BookNow = () => {
                   </label>
                 </div>
                 <p className="text-sm font-bold text-gray-500 ml-6">
-                  – Let our team come to you and clean your car while you relax
-                  at home.
+                  – Let our team come to you and provide professional cleaning for your vehicle, furniture, or any item while you relax at home.  
                 </p>
               </div>
               {/* تلميح */}
@@ -225,7 +223,7 @@ const BookNow = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                Send Message
+                Submit
               </motion.button>
             </form>
           </div>

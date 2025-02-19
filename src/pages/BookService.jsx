@@ -3,10 +3,12 @@ import HeroBookService from "../sections/HeroBookSection";
 import BookNow from "../sections/BookNow";
 import Footer from "../components/Footer";
 import MainTitle from "../components/MainTitle";
+import ScrollToTop from "../components/ScrollToTop";
 function BookService() {
   return (
     <>
-    <MainTitle title={"Book Your Service"} />
+      <ScrollToTop />
+      <MainTitle title={"Book Your Service"} />
       <Navbar />
       <HeroBookService />
       <BookNow />

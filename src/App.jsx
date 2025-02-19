@@ -5,8 +5,10 @@ import { lazy, useState, useEffect } from "react";
 const GiftLoader = lazy(() => import("./components/GifLoader"));
 const HomePage = lazy(() => import("./pages/HomePage"));
 const BookService = lazy(() => import("./pages/BookService"));
+const SuccessfulMessage = lazy(() => import("./pages/SuccessfulMessage"));
 
 const DashboardLogin = lazy(() => import("./components/dashboard/Login"));
+const DashboardHome = lazy(() => import("./components/dashboard/Home"));
 
 import NotFoundPage from "./pages/Error";
 function App() {
@@ -28,7 +30,11 @@ function App() {
           path="/book-service"
           element={isLoading ? <GiftLoader /> : <BookService />}
         />
+        <Route path="/order-successful" element={<SuccessfulMessage />} />
+
         <Route path="/login" element={<DashboardLogin />} />
+        <Route path="/dashboard-Home" element={<DashboardHome />} />
+
         <Route path="/error" element={<NotFoundPage />} />
         <Route path="*" element={<Navigate to="/error" replace />} />
       </Routes>

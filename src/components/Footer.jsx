@@ -40,13 +40,13 @@ export default function Footer() {
           >
             Our Services
           </HashLink>
-          <HashLink
+          {/* <HashLink
             smooth
             to="/#why-choose-us"
             className="font-normal text-base text-[#585A5B] font-lora letter-spacing-2 hover:text-[#1A78F2]"
           >
             Why Choose Us
-          </HashLink>
+          </HashLink> */}
           <HashLink
             smooth
             to="/#contact-us"
