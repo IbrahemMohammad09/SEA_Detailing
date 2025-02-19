@@ -1,5 +1,5 @@
 import { HashLink } from "react-router-hash-link";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useLocation } from "react-router-dom";
 import "./Footer.css";
 
 const scrollWithOffset = (offset) => (el) => {
@@ -9,6 +9,14 @@ const scrollWithOffset = (offset) => (el) => {
 };
 
 export default function Footer() {
+  const location = useLocation();
+
+  const handleLinkClick = (link) => {
+    if (link === "home" && location.pathname !== "/") {
+      window.location.href = "/";
+    }
+  };
+
   return (
     <>
       <div className="flex flex-col lg:flex-row gap-8 px-16 justify-between mt-20 container-footer">
@@ -21,6 +29,7 @@ export default function Footer() {
             to="/#home"
             scroll={scrollWithOffset(-100)}
             className="font-normal text-base text-[#585A5B] font-lora letter-spacing-2 hover:text-[#1A78F2]"
+            onClick={() => handleLinkClick("home")}
           >
             Home
           </HashLink>
