@@ -9,6 +9,7 @@ const SuccessfulMessage = lazy(() => import("./pages/SuccessfulMessage"));
 
 const DashboardLogin = lazy(() => import("./components/dashboard/Login"));
 const DashboardHome = lazy(() => import("./components/dashboard/Home"));
+const DashboardOrder = lazy(() => import("./components/dashboard/Order"));
 
 import NotFoundPage from "./pages/Error";
 function App() {
@@ -34,7 +35,8 @@ function App() {
 
         <Route path="/login" element={<DashboardLogin />} />
         <Route path="/dashboard-Home" element={<DashboardHome />} />
-
+        <Route path="/dashboard-order" element={<DashboardOrder />} />
+        
         <Route path="/error" element={<NotFoundPage />} />
         <Route path="*" element={<Navigate to="/error" replace />} />
       </Routes>

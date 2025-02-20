@@ -37,12 +37,12 @@ export default function SideBar() {
                 
                 <div className="flex flex-col items-center gap-16 h-screen mt-6 px-4">
                     <div className="flex flex-col items-center">
-                        <Link to="/dashboard/home" className="font-semibold text-xl text-[#1A78F2] font-source">
+                        <Link to="/dashboard-Home" className="font-semibold text-xl text-[#1A78F2] font-source">
                         <IoHome className="text-[#1A78F2] text-4xl" />Home</Link>
                     </div>
                    
                     <div className="flex flex-col items-center">
-                        <Link to="/dashboard/orders" className="font-semibold text-xl text-[#1A78F2] font-source">
+                        <Link to="/dashboard-order" className="font-semibold text-xl text-[#1A78F2] font-source">
                         <MdBorderColor className="text-[#1A78F2] text-4xl" />Orders</Link>
                     </div>
                     <div className="flex flex-col items-center">
