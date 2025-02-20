@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Logo from "../assets/logo.png";
 import { HashLink } from "react-router-hash-link";
 import { useLocation } from "react-router-dom";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,6 +24,37 @@ const Navbar = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const sectionIds = ["home", "our-services", "contact-us", "about-us"];
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    const observerOptions = {
+      root: null,
+      threshold: 0.5,
+      rootMargin: "0px 0px -20% 0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveLink(entry.target.id);
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        observer.unobserve(section);
+      });
+    };
   }, []);
 
   const handleLinkClick = (link) => {
@@ -97,19 +129,6 @@ const Navbar = () => {
         <li>
           <HashLink
             smooth
-            to="/#contact-us"
-            scroll={scrollWithOffset(-100)}
-            className={`hover:text-[#1A78F2] transition-colors cursor-pointer ${
-              activeLink === "contact-us" ? "text-[#1A78F2]" : ""
-            }`}
-            onClick={() => handleLinkClick("contact-us")}
-          >
-            Contact Us
-          </HashLink>
-        </li>
-        <li>
-          <HashLink
-            smooth
             to="/#about-us"
             scroll={scrollWithOffset(-150)}
             className={`hover:text-[#1A78F2] transition-colors cursor-pointer ${
@@ -118,6 +137,20 @@ const Navbar = () => {
             onClick={() => handleLinkClick("about-us")}
           >
             About Us
+          </HashLink>
+        </li>
+
+        <li>
+          <HashLink
+            smooth
+            to="/#contact-us"
+            scroll={scrollWithOffset(-100)}
+            className={`hover:text-[#1A78F2] transition-colors cursor-pointer ${
+              activeLink === "contact-us" ? "text-[#1A78F2]" : ""
+            }`}
+            onClick={() => handleLinkClick("contact-us")}
+          >
+            Contact Us
           </HashLink>
         </li>
       </ul>
@@ -161,20 +194,6 @@ const Navbar = () => {
         <li>
           <HashLink
             smooth
-            onClick={() => handleLinkClick("contact-us")}
-            to="/#contact-us"
-            className={`block py-2 px-4 hover:bg-[#1A78F2] hover:rounded-3xl hover:text-white hover:font-bold transition-colors ${
-              activeLink === "contact-us"
-                ? "bg-[#1A78F2] text-white font-bold"
-                : ""
-            }`}
-          >
-            Contact Us
-          </HashLink>
-        </li>
-        <li>
-          <HashLink
-            smooth
             onClick={() => handleLinkClick("about-us")}
             to="/#about-us"
             className={`block py-2 px-4 hover:bg-[#1A78F2] hover:rounded-3xl hover:text-white hover:font-bold transition-colors ${
@@ -184,6 +203,20 @@ const Navbar = () => {
             }`}
           >
             About Us
+          </HashLink>
+        </li>
+        <li>
+          <HashLink
+            smooth
+            onClick={() => handleLinkClick("contact-us")}
+            to="/#contact-us"
+            className={`block py-2 px-4 hover:bg-[#1A78F2] hover:rounded-3xl hover:text-white hover:font-bold transition-colors ${
+              activeLink === "contact-us"
+                ? "bg-[#1A78F2] text-white font-bold"
+                : ""
+            }`}
+          >
+            Contact Us
           </HashLink>
         </li>
       </motion.ul>

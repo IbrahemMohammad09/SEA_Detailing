@@ -6,6 +6,7 @@ import ContactUs from "../sections/ContactUs";
 import HeroSection2 from "../sections/HeroSection2";
 import OurServices from "../sections/OurServices";
 import MainTitle from "../components/MainTitle";
+import OurPortfolio from "../sections/OurPortfolio";
 
 function HomePage() {
   return (
@@ -17,7 +18,7 @@ function HomePage() {
         <HeroSection2 />
         <OurServices />
         <AboutUs />
-
+        <OurPortfolio />
         <ContactUs />
 
         <Footer />

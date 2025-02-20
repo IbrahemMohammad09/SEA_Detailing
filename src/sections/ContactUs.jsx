@@ -5,7 +5,7 @@ import "./ContactUs.css";
 export default function ContactUs() {
   return (
     <>
-      <div id="contact-us" className=" bg-[#EAEEF3] pt-7 mt-44 pb-28">
+      <div id="contact-us" className=" bg-[#EAEEF3] pt-7 mt-20 pb-28">
         <div className=" flex flex-col justify-center items-center text-center">
           <p className="abhaya-libre-bold text-6xl mb-16">
             Contact <span className="text-[#1A78F2]">Us</span>
