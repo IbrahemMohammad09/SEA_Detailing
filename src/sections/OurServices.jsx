@@ -1,7 +1,7 @@
 // OurServices.jsx
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useSearchParams, Link } from "react-router-dom"; // تأكد من استيراد Link من react-router-dom
+import { useSearchParams, Link } from "react-router-dom";
 import image1 from "../assets/OurServices/01e36d90c7d4867eed0b3b77bc0d363f.jpeg";
 import image2 from "../assets/OurServices/3fc85fa235aef293febf4a65565953cb.jpeg";
 import image3 from "../assets/OurServices/f429094570dd7d1caebf84042038d7a5.jpeg";

@@ -3,15 +3,19 @@ import { FiMenu, FiX } from "react-icons/fi";
 import { motion } from "framer-motion";
 import Logo from "../assets/logo.png";
 import { HashLink } from "react-router-hash-link";
-
+import { useLocation } from "react-router-dom";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeLink, setActiveLink] = useState("");
+  const location = useLocation();
+
   const scrollWithOffset = (offset) => (el) => {
     const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
     const yOffset = offset;
     window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
   };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -20,6 +24,15 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleLinkClick = (link) => {
+    setActiveLink(link);
+    setIsOpen(false);
+
+    if (link === "home" && location.pathname !== "/") {
+      window.location.href = "/";
+    }
+  };
 
   return (
     <nav
@@ -60,7 +73,10 @@ const Navbar = () => {
             smooth
             to="/#home"
             scroll={scrollWithOffset(-100)}
-            className="hover:text-[#1A78F2] transition-colors"
+            className={`hover:text-[#1A78F2] transition-colors ${
+              activeLink === "home" ? "text-[#1A78F2]" : ""
+            }`}
+            onClick={() => handleLinkClick("home")}
           >
             Home
           </HashLink>
@@ -70,7 +86,10 @@ const Navbar = () => {
             smooth
             to="/#our-services"
             scroll={scrollWithOffset(-80)}
-            className="hover:text-[#1A78F2] transition-colors cursor-pointer"
+            className={`hover:text-[#1A78F2] transition-colors cursor-pointer ${
+              activeLink === "our-services" ? "text-[#1A78F2]" : ""
+            }`}
+            onClick={() => handleLinkClick("our-services")}
           >
             Our Services
           </HashLink>
@@ -80,7 +99,10 @@ const Navbar = () => {
             smooth
             to="/#contact-us"
             scroll={scrollWithOffset(-100)}
-            className="hover:text-[#1A78F2] transition-colors cursor-pointer"
+            className={`hover:text-[#1A78F2] transition-colors cursor-pointer ${
+              activeLink === "contact-us" ? "text-[#1A78F2]" : ""
+            }`}
+            onClick={() => handleLinkClick("contact-us")}
           >
             Contact Us
           </HashLink>
@@ -90,7 +112,10 @@ const Navbar = () => {
             smooth
             to="/#about-us"
             scroll={scrollWithOffset(-150)}
-            className="hover:text-[#1A78F2] transition-colors cursor-pointer"
+            className={`hover:text-[#1A78F2] transition-colors cursor-pointer ${
+              activeLink === "about-us" ? "text-[#1A78F2]" : ""
+            }`}
+            onClick={() => handleLinkClick("about-us")}
           >
             About Us
           </HashLink>
@@ -110,9 +135,11 @@ const Navbar = () => {
         <li>
           <HashLink
             smooth
-            onClick={() => setIsOpen(false)}
-            to="/"
-            className="block py-2 px-4 hover:bg-[#1A78F2] hover:rounded-3xl hover:text-white hover:font-bold transition-colors"
+            onClick={() => handleLinkClick("home")}
+            to="/#home"
+            className={`block py-2 px-4 hover:bg-[#1A78F2] hover:rounded-3xl hover:text-white hover:font-bold transition-colors ${
+              activeLink === "home" ? "bg-[#1A78F2] text-white font-bold" : ""
+            }`}
           >
             Home
           </HashLink>
@@ -120,9 +147,13 @@ const Navbar = () => {
         <li>
           <HashLink
             smooth
-            onClick={() => setIsOpen(false)}
+            onClick={() => handleLinkClick("our-services")}
             to="/#our-services"
-            className="block py-2 px-4 hover:bg-[#1A78F2] hover:rounded-3xl hover:text-white hover:font-bold transition-colors"
+            className={`block py-2 px-4 hover:bg-[#1A78F2] hover:rounded-3xl hover:text-white hover:font-bold transition-colors ${
+              activeLink === "our-services"
+                ? "bg-[#1A78F2] text-white font-bold"
+                : ""
+            }`}
           >
             Our Services
           </HashLink>
@@ -130,9 +161,13 @@ const Navbar = () => {
         <li>
           <HashLink
             smooth
-            onClick={() => setIsOpen(false)}
+            onClick={() => handleLinkClick("contact-us")}
             to="/#contact-us"
-            className="block py-2 px-4 hover:bg-[#1A78F2] hover:rounded-3xl hover:text-white hover:font-bold transition-colors"
+            className={`block py-2 px-4 hover:bg-[#1A78F2] hover:rounded-3xl hover:text-white hover:font-bold transition-colors ${
+              activeLink === "contact-us"
+                ? "bg-[#1A78F2] text-white font-bold"
+                : ""
+            }`}
           >
             Contact Us
           </HashLink>
@@ -140,9 +175,13 @@ const Navbar = () => {
         <li>
           <HashLink
             smooth
-            onClick={() => setIsOpen(false)}
+            onClick={() => handleLinkClick("about-us")}
             to="/#about-us"
-            className="block py-2 px-4 hover:bg-[#1A78F2] hover:rounded-3xl hover:text-white hover:font-bold transition-colors"
+            className={`block py-2 px-4 hover:bg-[#1A78F2] hover:rounded-3xl hover:text-white hover:font-bold transition-colors ${
+              activeLink === "about-us"
+                ? "bg-[#1A78F2] text-white font-bold"
+                : ""
+            }`}
           >
             About Us
           </HashLink>
