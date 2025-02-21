@@ -14,12 +14,12 @@ const images = [
   image4,
   image5,
   image6,
-  image1,
-  image2,
-  image3,
-  image4,
-  image5,
-  image6,
+  // image1,
+  // image2,
+  // image3,
+  // image4,
+  // image5,
+  // image6,
 ];
 
 const OurPortfolio = () => {
@@ -28,7 +28,7 @@ const OurPortfolio = () => {
   return (
     <section
       id="our-portifolio"
-      className="min-h-screen py-16 px-5 md:px-20 lg:px-32"
+      className="min-h-auto py-16 px-5 md:px-20 lg:px-32"
     >
       {/* العناوين */}
       <div className="text-center mb-10 flex-shrink-0">
@@ -39,7 +39,7 @@ const OurPortfolio = () => {
       </div>
 
       {/* قسم المعرض */}
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-center">
+      <div className="grid grid-cols-1 xl:grid-cols-4 gap-6 items-center">
         {/* الصورة الكبيرة مع Aspect Ratio */}
         <motion.div
           key={selectedImage}
@@ -58,13 +58,13 @@ const OurPortfolio = () => {
         </motion.div>
 
         {/* الصور المصغرة */}
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-3 md:pl-10 gap-3">
           {images.map((img, index) => (
             <motion.img
               key={index}
               src={img}
               alt={`Work ${index + 1}`}
-              className={`w-full h-24 object-cover rounded-md cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-md ${
+              className={`w-full h-30 object-cover rounded-md cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-md ${
                 selectedImage === img ? "border-4 border-blue-500" : ""
               }`}
               whileHover={{ scale: 1.1 }}
