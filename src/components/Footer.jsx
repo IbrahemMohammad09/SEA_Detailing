@@ -1,6 +1,7 @@
 import { HashLink } from "react-router-hash-link";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import "./Footer.css";
+import { FaWhatsapp  } from "react-icons/fa";
 
 const scrollWithOffset = (offset) => (el) => {
   const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
@@ -88,7 +89,7 @@ export default function Footer() {
           </HashLink>
         </div>
 
-        <div className="flex flex-col gap-2 cursor-pointer">
+        <div className="flex flex-col gap-2  ">
           <p className="font-semibold text-xl font-source text-[#343536] letter-spacing-2">
             BOOK YOUR SERVICE
           </p>
@@ -97,19 +98,41 @@ export default function Footer() {
           </p>
           <RouterLink
             to="/book-service"
-            className="text-white font-normal md:font-semibold text-base letter-spacing-8 bg-[#1A78F2] rounded-4xl w-[193px] py-3.5 px-7 font-lora my-4 hover:shadow-xl hover:border hover:border-[#1A78F2] hover:bg-white hover:text-[#1A78F2]"
+            className="border text-white font-normal md:font-semibold text-base letter-spacing-8 bg-[#1A78F2] rounded-4xl w-[193px] py-3.5 px-7 font-lora my-4 hover:shadow-xl hover:border hover:border-[#1A78F2] hover:bg-white hover:text-[#1A78F2]"
           >
             BOOK SERVICE
           </RouterLink>
-          <a
-            href="tel:647-673-9380/ 647-273-0008"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-source text-base md:text-2xl font-light text-[#343536] letter-spacing-2"
+
+          <div
+            className="flex font-source text-base md:text-2xl font-light text-[#343536] letter-spacing-2"
           >
-            <span className="font-bold">Call us:</span> 647-673-9380/
-            647-273-0008
-          </a>
+            <span className="px-2 mt-1"><FaWhatsapp />
+            </span> 
+            <a
+              href="https://wa.me/6476739380"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#1A78F2]"
+            >
+              647-673-9380 
+            </a>
+          </div>
+
+          <div
+            className="flex font-source text-base md:text-2xl font-light text-[#343536] letter-spacing-2"
+          >
+            <span className="px-2 mt-1">< FaWhatsapp /></span>
+            <a
+              href="https://wa.me/6476730008"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#1A78F2]"
+            >
+              647-273-0008
+            </a>
+          </div>
+            
+
         </div>
       </div>
 
