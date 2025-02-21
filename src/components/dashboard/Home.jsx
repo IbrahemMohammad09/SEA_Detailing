@@ -14,7 +14,7 @@ export default function HomeDahboard(){
             <RiProfileFill  className="text-[#1A78F2]  text-4xl" />
                 <p className=" font-semibold text-2xl font-source">Portfolio</p>
             </Link>
-            <Link to={"/dashboard/orders"} className="bg-[#EAEEF3] flex gap-6 w-[315px] font-semibold text-xl text-[#1A78F2] rounded shadow-xl py-16 px-20 hover:border hover:border-[#1A78F2]">
+            <Link to={"/dashboard-order"} className="bg-[#EAEEF3] flex gap-6 w-[315px] font-semibold text-xl text-[#1A78F2] rounded shadow-xl py-16 px-20 hover:border hover:border-[#1A78F2]">
             <MdBorderColor className="text-[#1A78F2] text-4xl" />
                 <p className="  font-semibold text-2xl font-source">Orders</p>
             </Link>
