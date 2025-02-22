@@ -46,7 +46,7 @@ export default function SideBar() {
                         <MdBorderColor className="text-[#1A78F2] text-4xl" />Orders</Link>
                     </div>
                     <div className="flex flex-col items-center">
-                        <Link to="/dashboard/portfolio" className="font-semibold text-xl text-[#1A78F2] font-source">
+                        <Link to="/dashboard-portfolio" className="font-semibold text-xl text-[#1A78F2] font-source">
                         <RiProfileFill  className="text-[#1A78F2]  text-4xl" />Protfolio</Link>
                     </div>
                     <button

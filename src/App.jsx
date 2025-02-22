@@ -11,6 +11,7 @@ const SuccessfulMessage = lazy(() => import("./pages/SuccessfulMessage"));
 const DashboardLogin = lazy(() => import("./components/dashboard/Login"));
 const DashboardHome = lazy(() => import("./components/dashboard/Home"));
 const DashboardOrder = lazy(() => import("./components/dashboard/Order"));
+const DashboardPortfolio = lazy(() => import('./components/dashboard/Portfolio'));
 
 const NotFoundPage = lazy (()=> import('./pages/Error'))
 
@@ -38,6 +39,7 @@ function App() {
         <Route path="/login" element={<DashboardLogin />} />
         <Route path="/dashboard-Home" element={<DashboardHome />} />
         <Route path="/dashboard-order" element={<DashboardOrder />} />
+        <Route path="/dashboard-portfolio" element={<DashboardPortfolio />} />
 
         <Route path="/error" element={<NotFoundPage />} />
         <Route path="*" element={<Navigate to="/error" replace />} />
