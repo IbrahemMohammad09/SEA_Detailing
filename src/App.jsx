@@ -30,10 +30,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index element={isLoading ? <GiftLoader /> : <HomePage />} />
-        <Route
-          path="/book-service"
-          element={isLoading ? <GiftLoader /> : <BookService />}
-        />
+        <Route path="/book-service" element={<BookService />} />
         <Route path="/order-successful" element={<SuccessfulMessage />} />
 
         <Route path="/login" element={<DashboardLogin />} />
