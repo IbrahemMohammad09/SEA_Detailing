@@ -1,18 +1,22 @@
-const URL = "";
+const URL = "https://seadetailing.pythonanywhere.com/";
 
-const API ={
-    GET : {
-
+const Api = {
+    GET: {
+        ORDERLIST: `${URL}api/requests/`,
+        PICTURELIST: `${URL}api/pictures/`
     },
-    POST : {
-
+    POST: {
+        CREATEORDER: `${URL}api/requests/create/`,
+        CREATEPICTURE: `${URL}api/pictures/create/`,
+        LOGIN: `${URL}api/login/`
     },
-    DElETE : {
+    DELETE: (id) => ({
+        DELETEORDER: `${URL}api/requests/${id}/delete/`,
+        DELETEPICTURE: `${URL}api/pictures/${id}/delete/`
+    }),
+    PUT: (id) => ({
+        UPDATEORDER: `${URL}api/requests/${id}/update/`
+    })
+};
 
-    },
-    PUT : {
-        
-    }
-}
-
-export default {URL , API}
+export { URL, Api };

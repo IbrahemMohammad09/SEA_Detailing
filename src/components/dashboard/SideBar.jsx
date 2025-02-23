@@ -3,20 +3,21 @@ import { Link } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 import logo from "../../assets/logo.png"
 import { RiProfileFill } from "react-icons/ri";
-// import { useDispatch } from "react-redux";
-// import {logout} from '../../../redux/authSlice';
-// import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import {logout} from '../../redux/authSlice';
+import { useNavigate } from "react-router-dom";
 import { IoHome } from "react-icons/io5";
 import { MdBorderColor } from "react-icons/md";
 
 export default function SideBar() {
     const [isOpen, setIsOpen] = useState(false);
-    // const dispatch = useDispatch();
-    // const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    
     const handleLogout = () =>{
 
-        // dispatch(logout());
-        // navigate("/dashboard");
+        dispatch(logout());
+        navigate("/login");
           
     }
 
@@ -27,7 +28,7 @@ export default function SideBar() {
                 <FiMenu className="text-[#1A78F2] text-3xl cursor-pointer" onClick={() => setIsOpen(true)} />
             </div>
             
-            <div className={`bg-[#EAEEF3] w-50 flex flex-col items-center gap-6 fixed top-0 left-0 h-full z-50 transition-transform transform ${isOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 md:relative md:w-28 overflow-y-auto max-h-screen overscroll-contain`}>
+            <div className={`bg-[#EAEEF3] w-40 flex flex-col items-center gap-6 fixed top-0 left-0 h-full z-50 transition-transform transform ${isOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 md:relative md:w-28 overflow-x-auto max-h-screen overscroll-contain`}>
                 {/* close icon*/}
                 <div className="w-full  p-4 md:hidden">
                     <FiX className="text-[#1A78F2] text-3xl cursor-pointer" onClick={() => setIsOpen(false)} />

@@ -3,8 +3,13 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import cornerImage from "../assets/BookService/pattern.png";
 import cornerImage1 from "../assets/BookService/pattern1.png";
 import "./BookNowRadio.css";
+import { Api } from "../constant/Api";
+import axios from "axios";
+import { useEffect , useState } from "react";
+
 
 const BookNow = () => {
+  
   return (
     <div className="py-12 -mt-[400px] sm:-mt-[200px] md:mt-20 xl:mt-0 2xl:mt-52">
       {/* القسم الرئيسي */}

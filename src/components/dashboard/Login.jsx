@@ -3,16 +3,16 @@ import { FaUser, FaLock} from 'react-icons/fa';
 import { LuEyeClosed } from "react-icons/lu";
 import { FaRegEye } from "react-icons/fa6";
 import { useState } from 'react';
-// import Api from "../../../constant/api";
-// import axios from "axios";
+import {Api} from "../../constant/Api";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
-// import {useDispatch} from 'react-redux';
-// import {login} from '../../../redux/authSlice'
+import {useDispatch} from 'react-redux';
+import {login} from '../../redux/authSlice'
 
 export default function Login() {
     const [passwordVisible, setPasswordVisible] = useState(false);
     const navigate = useNavigate();
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     const [userName , setUserName] = useState("");
     const [password, setPassword] = useState("");
@@ -21,37 +21,32 @@ export default function Login() {
 
 
     const handleSubmit = async (e) =>{
-
-        // e.preventDefault();
-        // setLoading(true);
         
-        // const requestData = {
-        //     "username": userName,
-        //     "password": password
-        //   }
+        e.preventDefault();
+        setLoading(true);
+        
+        const requestData = {
+            "username": userName,
+            "password": password
+          }
 
-        // try{
-        //     console.log("sadsd")
-        //     const response = await axios.post(Api.POST.LOGIN, requestData);
+        try{
+            const response = await axios.post(Api.POST.LOGIN, requestData);
 
-        //     const message = response.data.state;
+            const message = response.data.state;
 
-        //     const token = response.data.data.token;
-        //     console.log(localStorage.getItem("adminToken"))
-        //     dispatch(login(token))
-
-        //     console.log("sadsd")
+            const token = response.data.data.token;
             
-        //     console.log()
+            dispatch(login(token))
             
-        //     if (message){
-        //         navigate ('/dashboard/home');
-        //     }else{
-        //         navigate('/')
-        //     }
-        // } catch{
-        //     navigate('/')
-        // }
+            if (message){
+                navigate ('/dashboard-home');
+            }else{
+                navigate('/login')
+            }
+        } catch{
+            navigate('/')
+        }
 
     }
 

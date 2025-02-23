@@ -1,6 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { lazy, useState, useEffect } from "react";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 
 const GiftLoader = lazy(() => import("./components/GifLoader"));
@@ -8,10 +9,13 @@ const HomePage = lazy(() => import("./pages/HomePage"));
 const BookService = lazy(() => import("./pages/BookService"));
 const SuccessfulMessage = lazy(() => import("./pages/SuccessfulMessage"));
 
-const DashboardLogin = lazy(() => import("./components/dashboard/Login"));
-const DashboardHome = lazy(() => import("./components/dashboard/Home"));
-const DashboardOrder = lazy(() => import("./components/dashboard/Order"));
-const DashboardPortfolio = lazy(() => import('./components/dashboard/Portfolio'));
+const DashboardLogin = lazy(() => import("./components/dashboard/Login"))
+const DashboardPages = {
+   DashboardHome : lazy(() => import("./components/dashboard/Home")),
+   DashboardOrder : lazy(() => import("./components/dashboard/Order")),
+   DashboardPortfolio : lazy(() => import('./components/dashboard/Portfolio')),
+};
+
 
 const NotFoundPage = lazy (()=> import('./pages/Error'))
 
@@ -34,12 +38,18 @@ function App() {
         <Route path="/order-successful" element={<SuccessfulMessage />} />
 
         <Route path="/login" element={<DashboardLogin />} />
-        <Route path="/dashboard-Home" element={<DashboardHome />} />
-        <Route path="/dashboard-order" element={<DashboardOrder />} />
-        <Route path="/dashboard-portfolio" element={<DashboardPortfolio />} />
 
-        <Route path="/error" element={<NotFoundPage />} />
-        <Route path="*" element={<Navigate to="/error" replace />} />
+        {Object.entries({
+          "/dashboard-home":DashboardPages.DashboardHome,
+          "/dashboard-order":DashboardPages.DashboardOrder,
+          "/dashboard-portfolio":DashboardPages.DashboardPortfolio
+        }).map(([path, Component])=>(
+          <Route key={path} path={path} element={<ProtectedRoute><Component /></ProtectedRoute>} />
+        ))}
+
+
+        {/* <Route path="/error" element={<NotFoundPage />} />
+        <Route path="*" element={<Navigate to="/error" replace />} /> */}
       </Routes>
     </BrowserRouter>
   );

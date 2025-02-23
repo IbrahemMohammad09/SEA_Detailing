@@ -1,29 +1,54 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import image1 from "../assets/OurPortfolio/3de741510686044c3d10f3169d6447cb.jpeg";
-import image2 from "../assets/OurPortfolio/4cef68c40a9a4e3ed777edaafe8335a9.jpeg";
-import image3 from "../assets/OurPortfolio/e26d9f6439c3df92e810757a7b44218b.jpeg";
-import image4 from "../assets/OurPortfolio/01e36d90c7d4867eed0b3b77bc0d363f.jpeg";
-import image5 from "../assets/OurPortfolio/3fc85fa235aef293febf4a65565953cb.jpeg";
-import image6 from "../assets/OurPortfolio/e26d9f6439c3df92e810757a7b44218b.jpeg";
+import axios from "axios";
+import { Api } from "../constant/Api";
 
-const images = [
-  image1,
-  image2,
-  image3,
-  image4,
-  image5,
-  image6,
+// import image1 from "../assets/OurPortfolio/3de741510686044c3d10f3169d6447cb.jpeg";
+// import image2 from "../assets/OurPortfolio/4cef68c40a9a4e3ed777edaafe8335a9.jpeg";
+// import image3 from "../assets/OurPortfolio/e26d9f6439c3df92e810757a7b44218b.jpeg";
+// import image4 from "../assets/OurPortfolio/01e36d90c7d4867eed0b3b77bc0d363f.jpeg";
+// import image5 from "../assets/OurPortfolio/3fc85fa235aef293febf4a65565953cb.jpeg";
+// import image6 from "../assets/OurPortfolio/e26d9f6439c3df92e810757a7b44218b.jpeg";
+
+// const images = [
   // image1,
   // image2,
   // image3,
   // image4,
   // image5,
   // image6,
-];
+  // image1,
+  // image2,
+  // image3,
+  // image4,
+  // image5,
+  // image6,
+// ];
 
 const OurPortfolio = () => {
-  const [selectedImage, setSelectedImage] = useState(images[0]);
+  const [images , setImages] = useState([]);
+  const [selectedImage, setSelectedImage] = useState(null);
+  
+  useEffect(()=>{
+    const fetchData = async () =>{
+      try{
+        const response = await axios.get(Api.GET.PICTURELIST);
+        const fetchedImages = response.data.data.reverse();
+        setImages(fetchedImages);
+        if (fetchedImages.length > 0) {
+          setSelectedImage(fetchedImages[0].image); // تعيين الصورة الافتراضية
+        }
+      } catch (error) {
+        console.error("Error fetching images:", error);
+      }
+    }
+    
+    fetchData();
+  },[])
+
+
+  
+
 
   return (
     <section
@@ -62,13 +87,13 @@ const OurPortfolio = () => {
           {images.map((img, index) => (
             <motion.img
               key={index}
-              src={img}
+              src={img.image}
               alt={`Work ${index + 1}`}
               className={`w-full h-30 object-cover rounded-md cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-md ${
-                selectedImage === img ? "border-4 border-blue-500" : ""
+                selectedImage === img.image ? "border-4 border-blue-500" : ""
               }`}
               whileHover={{ scale: 1.1 }}
-              onClick={() => setSelectedImage(img)}
+              onClick={() => setSelectedImage(img.image)}
             />
           ))}
         </div>

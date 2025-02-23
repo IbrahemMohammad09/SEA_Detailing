@@ -1,35 +1,73 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import SideBar from "./SideBar";
-import image1 from "../../assets/OurPortfolio/3de741510686044c3d10f3169d6447cb.jpeg";
-import image2 from "../../assets/OurPortfolio/4cef68c40a9a4e3ed777edaafe8335a9.jpeg";
-import image3 from "../../assets/OurPortfolio/e26d9f6439c3df92e810757a7b44218b.jpeg";
-import image4 from "../../assets/OurPortfolio/01e36d90c7d4867eed0b3b77bc0d363f.jpeg";
-import image5 from "../../assets/OurPortfolio/3fc85fa235aef293febf4a65565953cb.jpeg";
-import image6 from "../../assets/OurPortfolio/e26d9f6439c3df92e810757a7b44218b.jpeg";
-const images = [
-    image1,
-    image2,
-    image3,
-    image4,
-    image5,
-    image6,
-    image1,
-    image2,
-    image3,
-    image4,
-    image5,
-    image6,
-];
+import { Api } from "../../constant/Api";
+import axios from "axios";
+import { useNavigate } from "react-router";
+
 
 export default function Portfolio() {
+  const [images , setImages] = useState([])
+
   const [addImage, setaddImage] = useState(null);
-  const handleImageChange = (event, setImage) => {
+
+  const navigate = useNavigate()
+
+  useEffect(()=>{
+    const fetchData = async ()=>{
+      try{
+        const response = await axios.get(Api.GET.PICTURELIST);
+        setImages(response.data.data.reverse())
+      } catch (error) {
+        console.error("Error fetching images:", error);
+      }
+    }
+
+    fetchData();
+  },[])
+
+  const handleImageChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      const fileURL = URL.createObjectURL(file);  
-      setImage(fileURL);
+      setaddImage(file); 
     }
   };
+
+  const uplaodImage = async () =>{
+    if (!addImage) {
+      alert("Please choose a picture first!");
+      return;
+    }
+    const formData = new FormData();
+    formData.append("picture_title", "Portfolio Picture"); 
+    formData.append("image", addImage);
+
+    try{
+      const response = await axios.post(Api.POST.CREATEPICTURE,
+        formData,
+        {
+          headers: {
+              "Content-Type": "multipart/form-data",
+          },
+      });
+      alert("Uploaded successfully");
+      window.location.reload();
+    } catch{
+      alert("uploading image failed");
+      console.error("Error uploading image:", error.response ? error.response.data : error.message);
+    }
+  }
+  
+  const deletePicture = async (id) =>{
+    const confirmDelete = window.confirm(`Are you sure you want to delete this picture?`);
+
+    if(confirmDelete){
+      try{
+        const response = await axios.delete(Api.DELETE(id).DELETEPICTURE)
+      } catch{}
+    }
+    alert(`the picture has been deleted`);
+    window.location.reload();
+  }
 
   return (
     <>
@@ -45,7 +83,8 @@ export default function Portfolio() {
               {addImage ? (
                 <a href="#" className="block">
                   <img
-                    src={addImage}
+                    // src={addImage}
+                    src={URL.createObjectURL(addImage)}
                     alt="photo-portfolio"
                     className="w-full h-full object-cover"
                   />
@@ -60,23 +99,25 @@ export default function Portfolio() {
               />
             </label>
           </div>
-          <button className="px-8 py-4 text-2xl font-medium  bg-[#1A78F2] text-white rounded-lg  hover:bg-[#EAEEF3] hover:text-[#1A78F2] mt-6">
+          <button onClick={uplaodImage} className="px-8 py-4 text-2xl font-medium  bg-[#1A78F2] text-white rounded-lg  hover:bg-[#EAEEF3] hover:text-[#1A78F2] mt-6">
             Add
             </button>
             <hr className="mt-7 text-gray-400"></hr>
 
-          <div className="flex flex-col justify-center items-center mt-10">
-            {Array.from({ length: 4 }).map((_, rowIndex) => (
-              <div className="flex flex-col lg:flex-row gap-7 mb-9" key={rowIndex}>
-                {images.slice(rowIndex * 3, rowIndex * 3 + 3).map((image, index) => (
+            <div className="flex flex-col justify-center items-center mt-10">
+              <div className="grid grid-cols-1 gap-7 mb-9 xl:grid-cols-3 sm:grid-cols-2">
+                {images.map((image, index) => (
                   <div className="mb-3" key={index}>
-                    <img src={image} className="w-[350px] h-[250px] rounded-xl" alt="photo-portfolio" />
-                    <button className="px-4 py-2 bg-[#1A78F2] font-medium text-2xl text-white rounded-lg  hover:bg-[#EAEEF3] hover:text-[#1A78F2] mt-6 font-source">Delete</button>
+                    <img src={image.image} className="w-full h-[250px] rounded-xl object-cover" alt="photo-portfolio" />
+                    <button onClick={()=>deletePicture(image.id)} className="px-4 py-2 bg-[#1A78F2] font-medium text-2xl text-white rounded-lg hover:bg-[#EAEEF3] hover:text-[#1A78F2] mt-6 font-source">
+                      Delete
+                    </button>
                   </div>
                 ))}
               </div>
-            ))}
-          </div>
+            </div>
+
+
         </div>
       </div>
     </>
