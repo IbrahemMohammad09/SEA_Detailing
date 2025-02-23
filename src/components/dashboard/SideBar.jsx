@@ -28,7 +28,7 @@ export default function SideBar() {
                 <FiMenu className="text-[#1A78F2] text-3xl cursor-pointer" onClick={() => setIsOpen(true)} />
             </div>
             
-            <div className={`bg-[#EAEEF3] w-40 flex flex-col items-center gap-6 fixed top-0 left-0 h-full z-50 transition-transform transform ${isOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 md:relative md:w-28 overflow-x-auto max-h-screen overscroll-contain`}>
+            <div className={`bg-[#EAEEF3] w-40 flex   flex-col items-center gap-6 fixed top-0 left-0 h-full z-50 transition-transform transform ${isOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 md:relative md:w-36 overflow-x-auto  max-h-screen overscroll-contain`}>
                 {/* close icon*/}
                 <div className="w-full  p-4 md:hidden">
                     <FiX className="text-[#1A78F2] text-3xl cursor-pointer" onClick={() => setIsOpen(false)} />
@@ -60,3 +60,8 @@ export default function SideBar() {
         </>
     );
 }
+
+
+
+
+
