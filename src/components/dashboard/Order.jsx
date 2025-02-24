@@ -117,7 +117,7 @@ function ViewOrder() {
         <p className="font-bold text-2xl text-[#1A78F2] font-source">الطلبات</p>
         <div className="overflow-x-auto">
           <table className="w-full shadow-md rounded-lg overflow-hidden">
-            <thead className="hidden md:table-header-group">
+            <thead className="hidden lg:table-header-group">
               <tr className="bg-gray-200 text-gray-700 text-left font-source">
                 <th className="py-5  px-6">اسم الزبون</th>
                 <th className="py-5  px-6">عنوان البريد الإلكتروني</th>
@@ -131,7 +131,7 @@ function ViewOrder() {
                 <th className="py-5 px-6"></th>
               </tr>
             </thead>
-            <tbody className="block md:table-row-group ">
+            <tbody className="block lg:table-row-group ">
               {currentOrders.map((order) => (
                 <tr key={order.id} className="block md:table-row border-b bg-white shadow-md md:shadow-none md:bg-transparent mb-4 md:mb-0">
                   <td className="p-6 font-bold flex md:table-cell" data-label="Name">
@@ -154,9 +154,9 @@ function ViewOrder() {
                       </div>
                     )}
                   </td>
-                  <td className="p-6 cursor-pointer  truncate flex md:table-cell" data-label="Location">{order.type}</td>
-                  <td className="p-6 cursor-pointer  truncate flex md:table-cell" data-label="Location">{order.address}</td>
-                  <td className="p-6 cursor-pointer flex md:table-cell" data-label="Status" onClick={() => toggleStatus(order.id,order.status)}>
+                  <td className="p-6 cursor-pointer  truncate flex lg:table-cell" data-label="Location">{order.type}</td>
+                  <td className="p-6 cursor-pointer  truncate flex lg:table-cell" data-label="Location">{order.address}</td>
+                  <td className="p-6 cursor-pointer flex lg:table-cell" data-label="Status" onClick={() => toggleStatus(order.id,order.status)}>
                     <div className="flex items-center space-x-2">
                       {order.status === "new" ? (
                         <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full flex items-center">
@@ -171,7 +171,7 @@ function ViewOrder() {
                       )}
                     </div>
                   </td>
-                  <td className="p-3 py-6 flex space-x-4 md:table-cell" data-label="Actions">
+                  <td className="p-3 py-6 flex space-x-4 lg:table-cell" data-label="Actions">
                     <MdOutlineDeleteSweep onClick={()=>deleteOrder(order.id)} className="text-gray-500 text-2xl cursor-pointer" />
                   </td>
                 </tr>
