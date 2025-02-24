@@ -1,4 +1,4 @@
-const URL = "https://sea-detailing.com/";
+const URL = "https://seadetailing.pythonanywhere.com/";
 
 const Api = {
     GET: {
