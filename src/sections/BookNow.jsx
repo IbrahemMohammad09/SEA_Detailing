@@ -103,24 +103,42 @@ const BookNow = () => {
                   <FaPhone className="text-white mr-4 text-xl" />
                   <div>
                     <p className="text-sm lg:text-lg">
-                      647-673-9380 / 647-273-0008
+                    <a
+                      href="https://wa.me/6476739380"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      647-673-9380 / {" "}
+                    </a> 
+                    <a
+                      href="https://wa.me/6476730008"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      647-273-0008
+                    </a>
                     </p>
                   </div>
                 </div>
 
                 {/* البريد الإلكتروني */}
                 <div className="flex items-start">
-                  <FaEnvelope className="text-white mr-4 text-xl" />
-                  <p className="text-sm lg:text-lg">demo@gmail.com</p>
+                  
+                  <a  href="mailto:info@detailingcar.com" className="text-sm lg:text-lg flex"><FaEnvelope className="text-white mr-4 text-xl" />demo@gmail.com</a>
                 </div>
 
                 {/* العنوان */}
                 <div className="flex items-start">
-                  <FaMapMarkerAlt className="text-white mr-4 text-6xl" />
+                  
                   <p className="text-sm lg:text-lg">
-                    Toronto, North York, Vaughan, Richmondhill, Maple, Oakville,
-                    Markham, Ajax, Mississauga, Brampton, Oshawa, Aurora,
-                    Newmarket
+                    <a
+                      href="https://maps.app.goo.gl/fh9YV8Ki1vdzgxCs6"
+                      target="_blank"
+                      className="Aabhaya-libre-regular max-w-[500px] text-base flex items-start "
+                    >
+                      <FaMapMarkerAlt className="text-white mr-4 text-3xl" />
+                      365 murray ross parkway toronto canada
+                    </a>
                   </p>
                 </div>
               </div>
