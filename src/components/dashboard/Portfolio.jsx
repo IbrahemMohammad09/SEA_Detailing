@@ -2,7 +2,7 @@ import { useState,useEffect } from "react";
 import SideBar from "./SideBar";
 import { Api } from "../../constant/Api";
 import axios from "axios";
-import { useNavigate } from "react-router";
+
 
 
 export default function Portfolio() {
@@ -10,7 +10,6 @@ export default function Portfolio() {
 
   const [addImage, setaddImage] = useState(null);
 
-  const navigate = useNavigate()
 
   useEffect(()=>{
     const fetchData = async ()=>{
