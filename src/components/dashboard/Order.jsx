@@ -15,6 +15,7 @@ function ViewOrder() {
   const [token, setToken] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [orders , setOrders] = useState([]);
+  const [see , setSee] = useState(true)
   const itemsPerPage = 6;
   
 
@@ -65,6 +66,7 @@ function ViewOrder() {
 
 
   const toggleExpand = (id) => {
+    setSee(!see)
     setExpandedRow(expandedRow === id ? null : id); 
   };
 
@@ -133,6 +135,7 @@ function ViewOrder() {
             </thead>
             <tbody className="block lg:table-row-group ">
               {currentOrders.map((order) => (
+                <React.Fragment key={order.id}>
                 <tr key={order.id} className="block md:table-row border-b bg-white shadow-md md:shadow-none md:bg-transparent mb-4 md:mb-0">
                   <td className="p-6 font-bold flex md:table-cell" data-label="Name">
                     {order.name}
@@ -145,14 +148,15 @@ function ViewOrder() {
                   <td 
                     className="p-6 font-source cursor-pointer flex md:table-cell " 
                     data-label="Description" 
-                    onClick={() => toggleExpand(order.id)}
+                    // onClick={() => toggleExpand(order.id)}
                   >
-                    {"انقر هنا لعرض تفاصيل الطلب"}
-                    {expandedRow === order.id && (
+                    {/* {see && "انقر هنا لعرض تفاصيل الطلب"} */}
+                    {order.message}
+                    {/* {expandedRow === order.id && (
                       <div className="expanded-row p-6 text-gray-700 font-source fulldesecription">
                         <p>{order.message}</p>
                       </div>
-                    )}
+                    )} */}
                   </td>
                   <td className="p-6 cursor-pointer  truncate flex lg:table-cell" data-label="Location">{order.type}</td>
                   <td className="p-6 cursor-pointer  truncate flex lg:table-cell" data-label="Location">{order.address}</td>
@@ -175,6 +179,8 @@ function ViewOrder() {
                     <MdOutlineDeleteSweep onClick={()=>deleteOrder(order.id)} className="text-gray-500 text-2xl cursor-pointer" />
                   </td>
                 </tr>
+
+                </React.Fragment>
               ))}
             </tbody>
           </table>
