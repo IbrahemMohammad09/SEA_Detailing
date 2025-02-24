@@ -5,10 +5,77 @@ import cornerImage1 from "../assets/BookService/pattern1.png";
 import "./BookNowRadio.css";
 import { Api } from "../constant/Api";
 import axios from "axios";
-import { useEffect , useState } from "react";
-
+import { useState } from "react";
+import { useNavigate } from "react-router";
 
 const BookNow = () => {
+  const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("default@email.com");
+  const [address, setAddress] = useState("");
+  const [phone, setPhone] = useState("");
+  const [type, setType] = useState("");
+  const [text, setText] = useState("");
+  
+
+
+  const sendBookingRequest = async (e) => {
+    e.preventDefault(); 
+
+    if (!name) {
+      alert("Please enter your name.");
+      return;
+  }
+  
+  if (!address) {
+      alert("Please enter your address.");
+      return;
+  }
+  if (!phone) {
+      alert("Please enter your phone number.");
+      return;
+  }
+  if (!type) {
+      alert("Please select a service type.");
+      return;
+  }
+  if (!text) {
+      alert("Please enter your message.");
+      return;
+  }
+
+    try {
+      const requestData = {
+        name,
+        email,
+        address,
+        phone,
+        message: text,
+        status: "new",
+        type
+      };
+
+
+      const response = await axios.post(Api.POST.CREATEORDER, requestData, {
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+
+      if (response.status === 200 || response.status === 201) {
+        navigate("/order-successful");
+      } else {
+        alert("Failed to send booking request. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error sending booking request:", error);
+      alert("An error occurred while sending the request. Please check your information and try again.");
+    }
+};
+
+  
+
+
   
   return (
     <div className="py-12 -mt-[400px] sm:-mt-[200px] md:mt-20 xl:mt-0 2xl:mt-52">
@@ -76,7 +143,7 @@ const BookNow = () => {
 
           {/* الجزء الأيمن */}
           <div className="w-full md:w-3/5 p-8 pt-20 pl-20">
-            <form className="space-y-8">
+            <form onSubmit={sendBookingRequest} className="space-y-8">
               {" "}
               {/* زيادة التباعد بين العناصر */}
               {/* الصف الأول: Name - The address */}
@@ -92,6 +159,7 @@ const BookNow = () => {
                     Name
                   </label>
                   <input
+                    onChange={(e) => setName(e.target.value)}
                     type="text"
                     id="name"
                     placeholder="Enter Your Name"
@@ -109,6 +177,7 @@ const BookNow = () => {
                     Address
                   </label>
                   <input
+                    onChange={ (e)=> setAddress(e.target.value)}
                     type="text"
                     id="address"
                     placeholder="Enter Your Address"
@@ -129,6 +198,7 @@ const BookNow = () => {
                     Email
                   </label>
                   <input
+                    onChange={(e)=> setEmail(e.target.value)}
                     type="email"
                     id="email"
                     placeholder="Enter You Email"
@@ -146,6 +216,7 @@ const BookNow = () => {
                     Phone Number
                   </label>
                   <input
+                    onChange={(e)=> setPhone(e.target.value)}
                     type="tel"
                     id="phone"
                     placeholder="Enter Your Phone Number"
@@ -154,48 +225,47 @@ const BookNow = () => {
                 </motion.div>
               </div>
               <div className="space-y-4">
-                <h1 className="poppins-bold">
-                  Choose Your Preferred Service Method:
-                </h1>
+                <h1 className="poppins-bold">Choose Your Preferred Service Method:</h1>
+
+                {/* خيار Cleaning at the Center */}
                 <div className="flex items-center">
                   <input
                     type="radio"
                     id="center"
                     name="service"
                     value="center"
+                    checked={type === "center"}
+                    onChange={(e) => setType(e.target.value)}
                     className="mr-2 text-sm poppins-regular appearance-none w-5 h-5 border-2 border-gray-300 rounded-full checked:bg-blue-500 checked:border-blue-500 relative"
                   />
-                  <label
-                    htmlFor="center"
-                    className="text-gray-700 poppins-bold font-bold"
-                  >
-                    {" "}
+                  <label htmlFor="center" className="text-gray-700 poppins-bold font-bold">
                     Cleaning at the Center
                   </label>
                 </div>
                 <p className="text-sm font-bold text-gray-500 ml-6">
                   – Bring your car, motorcycle, or any item to our center and experience top-tier professional cleaning services by our experts.
                 </p>
+
+                {/* خيار Cleaning at Home */}
                 <div className="flex items-center">
                   <input
                     type="radio"
                     id="home"
                     name="service"
                     value="home"
+                    checked={type === "home"}
+                    onChange={(e) => setType(e.target.value)}
                     className="mr-2 text-sm poppins-regular appearance-none w-5 h-5 border-2 border-gray-300 rounded-full checked:bg-blue-500 checked:border-blue-500 relative"
                   />
-                  <label
-                    htmlFor="home"
-                    className="text-gray-700 poppins-bold font-bold"
-                  >
-                    {" "}
+                  <label htmlFor="home" className="text-gray-700 poppins-bold font-bold">
                     Cleaning at Home
                   </label>
                 </div>
                 <p className="text-sm font-bold text-gray-500 ml-6">
-                  – Let our team come to you and provide professional cleaning for your vehicle, furniture, or any item while you relax at home.  
+                  – Let our team come to you and provide professional cleaning for your vehicle, furniture, or any item while you relax at home.
                 </p>
               </div>
+
               {/* تلميح */}
               <div className="bg-blue-50 p-4 rounded-lg xl:w-[70%]">
                 <p className="text-sm poppins-bold text-blue-700">
@@ -215,6 +285,8 @@ const BookNow = () => {
                   Message
                 </label>
                 <textarea
+                  value={text}
+                  onChange={(e) => setText(e.target.value)}
                   id="message"
                   placeholder="Write Your Message"
                   className="w-full text-sm poppins-regular border-b-4 border-gray-300 focus:border-blue-500 outline-none py-2 rounded-b-md"
@@ -227,6 +299,7 @@ const BookNow = () => {
                 className="bg-blue-500 text-white px-6 py-2 rounded-lg float-right"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
+                onSubmit={sendBookingRequest}
               >
                 Submit
               </motion.button>

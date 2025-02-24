@@ -39,21 +39,21 @@ export default function SideBar() {
                 <div className="flex flex-col items-center gap-16 h-screen mt-6 px-4">
                     <div className="flex flex-col items-center">
                         <Link to="/dashboard-Home" className="font-semibold text-xl text-[#1A78F2] font-source">
-                        <IoHome className="text-[#1A78F2] text-4xl" />Home</Link>
+                        <IoHome className="text-[#1A78F2] text-4xl" />الصفحة الرئيسية</Link>
                     </div>
                    
                     <div className="flex flex-col items-center">
                         <Link to="/dashboard-order" className="font-semibold text-xl text-[#1A78F2] font-source">
-                        <MdBorderColor className="text-[#1A78F2] text-4xl" />Orders</Link>
+                        <MdBorderColor className="text-[#1A78F2] text-4xl" />الطلبات</Link>
                     </div>
                     <div className="flex flex-col items-center">
                         <Link to="/dashboard-portfolio" className="font-semibold text-xl text-[#1A78F2] font-source">
-                        <RiProfileFill  className="text-[#1A78F2]  text-4xl" />Protfolio</Link>
+                        <RiProfileFill  className="text-[#1A78F2]  text-4xl" />معرض الصور</Link>
                     </div>
                     <button
                     onClick={handleLogout}
                     className="mb-8 w-[100px] border-4 border-[#1A78F2] text-[#1A78F2] text-xl font-medium font-source rounded-3xl shadow-md bg-white hover:bg-[#1A78F2] hover:text-white transition-all">
-                      log out 
+                      تسجيل الخروج
                     </button>
                 </div>
             </div>

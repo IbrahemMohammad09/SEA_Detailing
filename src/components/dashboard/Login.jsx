@@ -58,10 +58,10 @@ export default function Login() {
         <>
         <div className=' bg-[#EAEEF3] h-screen flex justify-center items-center p-10 '>
                 <div className=" flex flex-col justify-center items-center mb-7  mt-24  py-12 md:rounded-lg md:shadow-gray-500 md:shadow-2xl px-4 md:px-24  ">
-                    <p className="text-center font-normal text-7xl text-[#241E1E]  mb-12">Welcome</p>
+                    <p className="text-center font-normal text-7xl text-[#241E1E]  mb-12">اهلا بك</p>
                     <form>
                         <div className="flex flex-col mb-10">
-                            <label className="font-semibold text-2xl  text-black">User Name</label>
+                            <label className="font-semibold text-2xl  text-black">اسم المستخدم</label>
                             <div className="relative">
                                 <span className="absolute left-0 top-1/2 transform -translate-y-1/2 p-2">
                                     <FaUser className='text-[#1A78F2]' /> 
@@ -76,7 +76,7 @@ export default function Login() {
                             </div>
                         </div>
                         <div className="flex flex-col">
-                            <label className="font-semibold text-2xl  text-black">Password</label>
+                            <label className="font-semibold text-2xl  text-black">كلمة السر</label>
                             <div className="relative flex items-center">
                                 <span className="absolute left-0 top-1/2 transform -translate-y-1/2 p-2">
                                     <FaLock className='text-[#1A78F2]' /> 
@@ -101,7 +101,7 @@ export default function Login() {
                             className="w-full bg-[#1A78F2]  font-semibold text-3xl  font-loar  mt-9 rounded-3xl text-[#EAEEF3] py-6 px-28   hover:bg-blue-600  hover:shadow-xl" 
                             onClick={handleSubmit}
                             >{
-                                loading?("Login..."):("login")
+                                loading?("... تسجيل الدخول"):("تسجيل الدخول")
                             }</button>
                     </form>
                 </div>

@@ -4,8 +4,10 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import ScrollToTop from "../components/ScrollToTop";
 
 export default function Successful() {
+
     const navigate = useNavigate();
     const fadeInUp = {
         initial: { opacity: 0, y: 20 },
@@ -36,6 +38,7 @@ export default function Successful() {
     const message2 = "Thank you for choosing us!";
     return (
         <div>
+            <ScrollToTop />
             <Navbar />
             <div className="flex flex-col items-center text-center font-source text-[#1A78F2] mt-50  mb-44 gap-1">
                 <motion.div

@@ -18,7 +18,8 @@ function BookService() {
     return () => clearTimeout(timer);
   }, []);
 
-  return isLoading ? (
+  return  isLoading ?
+   (
     <GifLoader />
   ) : (
     <>
