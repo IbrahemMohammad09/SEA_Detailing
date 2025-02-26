@@ -11,10 +11,10 @@ const FILES_TO_CACHE = [
 
 // 🟢 تثبيت الـ Service Worker وتخزين الملفات في الكاش
 self.addEventListener('install', (event) => {
-  console.log('Service Worker: Installing...');
+  // console.log('Service Worker: Installing...');
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log('Service Worker: Caching Files');
+      // console.log('Service Worker: Caching Files');
       return cache.addAll(FILES_TO_CACHE);
     })
   );
@@ -22,7 +22,7 @@ self.addEventListener('install', (event) => {
 
 // 🟢 جلب الملفات من الكاش عند فقدان الاتصال
 self.addEventListener('fetch', (event) => {
-  console.log('Service Worker: Fetching', event.request.url);
+  // console.log('Service Worker: Fetching', event.request.url);
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       return cachedResponse || fetch(event.request);
@@ -32,13 +32,13 @@ self.addEventListener('fetch', (event) => {
 
 // 🟢 تحديث الكاش عند وجود إصدار جديد من Service Worker
 self.addEventListener('activate', (event) => {
-  console.log('Service Worker: Activating...');
+  // console.log('Service Worker: Activating...');
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames.map((cache) => {
           if (cache !== CACHE_NAME) {
-            console.log('Service Worker: Deleting old cache:', cache);
+            // console.log('Service Worker: Deleting old cache:', cache);
             return caches.delete(cache);
           }
         })

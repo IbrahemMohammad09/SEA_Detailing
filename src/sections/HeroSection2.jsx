@@ -48,14 +48,14 @@ function HeroSection2() {
           </div>
 
           {/* القسم الأيمن */}
-          <div className="text-center md:text-start md:pl-20 lg:text-2xl w-full md:w-1/3">
+          {/* <div className="text-center md:text-start md:pl-20 lg:text-2xl w-full md:w-1/3"> */}
             <Link
               to={"/book-service"}
               className="bg-blue-500 text-white px-10 py-2 rounded-full hover:bg-blue-600 transition duration-300 cursor-pointer"
             >
               Book Service
             </Link>
-          </div>
+          {/* </div> */}
         </div>
       </div>
 
