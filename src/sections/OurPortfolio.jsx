@@ -3,28 +3,6 @@ import { motion } from "framer-motion";
 import axios from "axios";
 import { Api } from "../constant/Api";
 
-// import image1 from "../assets/OurPortfolio/3de741510686044c3d10f3169d6447cb.jpeg";
-// import image2 from "../assets/OurPortfolio/4cef68c40a9a4e3ed777edaafe8335a9.jpeg";
-// import image3 from "../assets/OurPortfolio/e26d9f6439c3df92e810757a7b44218b.jpeg";
-// import image4 from "../assets/OurPortfolio/01e36d90c7d4867eed0b3b77bc0d363f.jpeg";
-// import image5 from "../assets/OurPortfolio/3fc85fa235aef293febf4a65565953cb.jpeg";
-// import image6 from "../assets/OurPortfolio/e26d9f6439c3df92e810757a7b44218b.jpeg";
-
-// const images = [
-  // image1,
-  // image2,
-  // image3,
-  // image4,
-  // image5,
-  // image6,
-  // image1,
-  // image2,
-  // image3,
-  // image4,
-  // image5,
-  // image6,
-// ];
-
 const OurPortfolio = () => {
   const [images , setImages] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
