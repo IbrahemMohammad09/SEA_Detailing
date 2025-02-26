@@ -18,7 +18,21 @@ export default function Login() {
     const [password, setPassword] = useState("");
     const [loading , setLoading]= useState(false);
 
-
+    // Send FCM token to Django backend (from App.js or any component)
+    function sendTokenToBackend(token) {
+        fetch('/register-fcm-token/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${userToken}`,  // If your API requires authentication
+        },
+        body: JSON.stringify({ token })
+        })
+        .then(response => response.json())
+        .then(data => console.log("Token successfully registered with backend:", data))
+        .catch(err => console.log("Error sending token to backend:", err));
+    }
+  
 
     const handleSubmit = async (e) =>{
         
@@ -38,9 +52,11 @@ export default function Login() {
             const token = response.data.data.token;
             
             dispatch(login(token))
+
             
             if (message){
                 navigate ('/dashboard-home');
+                sendTokenToBackend(token);
             }else{
                 navigate('/login')
             }

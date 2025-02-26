@@ -1,48 +1,28 @@
-const CACHE_NAME = 'app-cache-v1';
-const FILES_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/icon-192x192.png',
-  '/icon-512x512.png',
-  '/src/main.jsx', // أو المسار الصحيح لملف React الأساسي
-  '/src/App.jsx',  // أو ملف التطبيق الرئيسي
-];
+// public/firebase-messaging-sw.js
 
-// 🟢 تثبيت الـ Service Worker وتخزين الملفات في الكاش
-self.addEventListener('install', (event) => {
-  // console.log('Service Worker: Installing...');
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      // console.log('Service Worker: Caching Files');
-      return cache.addAll(FILES_TO_CACHE);
-    })
-  );
+importScripts('https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js');
+importScripts('https://www.gstatic.com/firebasejs/9.1.2/firebase-messaging.js');
+
+firebase.initializeApp({
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID",
 });
 
-// 🟢 جلب الملفات من الكاش عند فقدان الاتصال
-self.addEventListener('fetch', (event) => {
-  // console.log('Service Worker: Fetching', event.request.url);
-  event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      return cachedResponse || fetch(event.request);
-    })
-  );
-});
+const messaging = firebase.messaging();
 
-// 🟢 تحديث الكاش عند وجود إصدار جديد من Service Worker
-self.addEventListener('activate', (event) => {
-  // console.log('Service Worker: Activating...');
-  event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cache) => {
-          if (cache !== CACHE_NAME) {
-            // console.log('Service Worker: Deleting old cache:', cache);
-            return caches.delete(cache);
-          }
-        })
-      );
-    })
-  );
+// Handle background messages
+messaging.onBackgroundMessage(function(payload) {
+  console.log('Background message received ', payload);
+
+  const notificationTitle = payload.notification.title;
+  const notificationOptions = {
+    body: payload.notification.body,
+    icon: payload.notification.icon,
+  };
+
+  self.registration.showNotification(notificationTitle, notificationOptions);
 });

@@ -34,7 +34,7 @@ function ViewOrder() {
 
   // useEffect(() => {
   //   // وضع رابط الباك ايند
-  //   const ws = new WebSocket("BackendURL");
+  //   const ws = new WebSocket("wss://sea-cardetailing.com/ws/admin/notifications");
 
   //   ws.onopen = () => {
   //     console.log("WebSocket connection opened");
