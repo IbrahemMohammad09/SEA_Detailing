@@ -9,11 +9,11 @@ import App from './App.jsx'
 
 
 createRoot(document.getElementById('root')).render(
-  <Provider store={store} >
+
     <HelmetProvider>
       <StrictMode>
         <App />
       </StrictMode>
     </HelmetProvider>
-  </Provider>
+
 )
