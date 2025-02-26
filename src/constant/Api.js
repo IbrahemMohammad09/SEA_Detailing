@@ -1,5 +1,5 @@
-// const URL = "https://seadetailing.pythonanywhere.com/";
-const URL = "https://sea-cardetailing.com/";
+const URL = "https://seadetailing.pythonanywhere.com/";
+// const URL = "https://sea-cardetailing.com/";
 
 
 const Api = {
