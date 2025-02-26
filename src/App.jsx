@@ -34,6 +34,7 @@ function App() {
 
         <Route path="/error" element={<NotFoundPage />} />
         <Route path="*" element={<Navigate to="/error" replace />} />
+        
       </Routes>
     </BrowserRouter>
   );
