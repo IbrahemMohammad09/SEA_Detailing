@@ -6,7 +6,7 @@ const Api = {
     GET: {
         ORDERLIST: `${URL}api/requests/`,
         PICTURELIST: `${URL}api/pictures/`,
-        RATESLIST: URL+'api/rates/',
+        RATESLIST: `${URL}api/rates/`,
         RATESALLLIST: URL+'api/rates/all',
     },
     POST: {

@@ -48,7 +48,7 @@ const ClientsReviews = () => {
       }
     };
 
-    // fetchData();
+    fetchData();
   }, []);
 
   useEffect(() => {
@@ -117,14 +117,14 @@ const ClientsReviews = () => {
             {/* الأسهم خارج السلايدر */}
             <button
               ref={swiperNavPrev}
-              className="absolute left-[-100px] top-1/2 transform -translate-y-1/2 border-2 border-[#B47F3D] text-[#B47F3D] p-5 rounded-full shadow-lg bg-white hover:bg-[#B47F3D] hover:text-white transition-all z-10 hidden md:block"
+              className="absolute left-[-100px] top-1/2 transform -translate-y-1/2 border-2 border-[#1A78F2] text-[#1A78F2] p-5 rounded-full shadow-lg bg-white hover:bg-[#1A78F2] hover:text-white transition-all z-10 hidden md:block"
             >
               <FaArrowLeft className="text-sm sm:text-sm md:text-xl lg:text-3xl" />
             </button>
 
             <button
               ref={swiperNavNext}
-              className="absolute right-[-100px] top-1/2 transform -translate-y-1/2 border-2 border-[#B47F3D] text-[#B47F3D] p-5 rounded-full shadow-lg bg-white hover:bg-[#B47F3D] hover:text-white transition-all z-10 hidden md:block"
+              className="absolute right-[-100px] top-1/2 transform -translate-y-1/2 border-2 border-[#1A78F2] text-[#1A78F2] p-5 rounded-full shadow-lg bg-white hover:bg-[#1A78F2] hover:text-white transition-all z-10 hidden md:block"
             >
               <FaArrowRight className="text-sm sm:text-sm md:text-xl lg:text-3xl" />
             </button>
@@ -150,7 +150,7 @@ const ClientsReviews = () => {
                 {reviews.map((review, index) => (
                   <SwiperSlide key={index} className="flex justify-center">
                     <div
-                      className="border-4 mt-10 border-[#B47F3D] p-8 rounded-xl text-center bg-white mx-auto max-w-[300px] h-[400px] flex flex-col justify-between"
+                      className="border-4 mt-10 border-[#1A78F2] p-8 rounded-xl text-center bg-white mx-auto max-w-[300px] h-[400px] flex flex-col justify-between"
                       style={{
                         boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.3)",
                       }}
@@ -165,8 +165,8 @@ const ClientsReviews = () => {
                             key={i}
                             className={
                               i < review.rate
-                                ? "text-[#F6973F]"
-                                : "text-[#F6973F] opacity-30"
+                                ? "text-[#1A78F2]"
+                                : "text-[#1A78F2] opacity-30"
                             }
                           />
                         ))}
@@ -219,7 +219,7 @@ const ClientsReviews = () => {
 
           {/* Popup التقييم */}
           {showPopup && (
-            <div className="z-50 fixed top-0 left-0 w-full h-full flex items-center justify-center animate-fadeIn">
+            <div className="z-50 fixed top-0 left-0 w-full h-full  bg-black/50 flex items-center justify-center animate-fadeIn">
               <div className="bg-white p-8 rounded-3xl shadow-2xl lg:w-[400px] w-[350px] lg:h-[650px]  h-auto text-center animate-slideUp relative">
                 {/* زر الإغلاق */}
                 <button
