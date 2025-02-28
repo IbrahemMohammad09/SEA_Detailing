@@ -7,6 +7,7 @@ import HeroSection2 from "../sections/HeroSection2";
 import OurServices from "../sections/OurServices";
 import MainTitle from "../components/MainTitle";
 import OurPortfolio from "../sections/OurPortfolio";
+import ClientsReviews from "../sections/ClientsReviews";
 
 function HomePage() {
   return (
@@ -20,6 +21,7 @@ function HomePage() {
         <AboutUs />
         <OurPortfolio />
         <ContactUs />
+        <ClientsReviews />
 
         <Footer />
       </div>
