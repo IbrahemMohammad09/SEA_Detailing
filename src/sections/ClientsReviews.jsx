@@ -13,7 +13,7 @@ import {
   FaComment,
   FaUserAlt,
 } from "react-icons/fa";
-import { Api } from "../constant/Api";
+import { Api,URL } from "../constant/Api";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
 // import Loading from "../pages/Loading";
@@ -39,7 +39,7 @@ const ClientsReviews = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://starofelegance.com/api/rates/");
+        const response = await axios.get(Api.GET.RATESLIST);
         setReviews(response.data.reverse());
       } catch {
         <Navigate to={"/error"} />;
