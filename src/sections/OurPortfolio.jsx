@@ -67,7 +67,7 @@ const OurPortfolio = () => {
               key={index}
               src={img.image}
               alt={`Work ${index + 1}`}
-              className={`w-full h-30 object-cover rounded-md cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-md ${
+              className={`w-full w h-30 object-cover rounded-md cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-md ${
                 selectedImage === img.image ? "border-4 border-blue-500" : ""
               }`}
               whileHover={{ scale: 1.1 }}

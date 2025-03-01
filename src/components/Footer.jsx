@@ -20,7 +20,8 @@ export default function Footer() {
 
   return (
     <>
-      <div className="flex flex-col lg:flex-row gap-8 px-16 justify-between mt-20 container-footer">
+      <div className="bg-[#F6F6F6] h-8 w-full py-8 mt-24 font-nunito"></div>
+      <div className="flex flex-col lg:flex-row gap-8 px-16 justify-between mt-10 container-footer">
         <div className="flex flex-col gap-2 cursor-pointer">
           <p className="font-semibold text-xl font-source text-[#343536] letter-spacing-2">
             SEA DETALIING
@@ -136,7 +137,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="bg-[#F6F6F6] py-8 mt-24 font-nunito">
+      <div className="bg-[#F6F6F6] py-8 mt-14 font-nunito">
         <p className="text-black font-normal text-base text-center">
           © Copyright by{" "}
           <a
