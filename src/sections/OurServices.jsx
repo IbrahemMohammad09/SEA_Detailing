@@ -16,7 +16,7 @@ const servicesData = [
   },
   {
     id: 2,
-    type: "car",
+    type: "home",
     title: "Steam Clean Upholstery",
     description: "Begin by scheduling an initial consultation.",
     image: image2,
@@ -31,7 +31,7 @@ const servicesData = [
   {
     id: 4,
     type: "car",
-    title: "CAr polish & Wax",
+    title: "Car polish & Wax",
     description: "Together, we select materials, colors.",
     image: image2,
   },
@@ -44,14 +44,14 @@ const servicesData = [
   },
   {
     id: 6,
-    type: "home",
+    type: "car",
     title: " Detailed Door Panel",
     description: "We maintain quality standards for the final result.",
     image: image1,
   },
   {
     id: 7,
-    type: "home",
+    type: "car",
     title: "Wheel changing",
     description: "We conduct final walkthroughs.",
     image: image2,

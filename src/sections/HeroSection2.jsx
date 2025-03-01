@@ -34,7 +34,7 @@ function HeroSection2() {
           {/* القسم الأيسر */}
           <div className="text-center md:text-left w-full md:w-1/3">
             <h2 className="text-3xl lg:text-6xl font-bold">
-              Why Chose <span className="text-blue-500">US</span>?
+              Why Chose <span className="text-blue-500">Us</span>?
             </h2>
           </div>
 

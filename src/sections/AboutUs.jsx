@@ -19,9 +19,11 @@ export default function AboutUs() {
               QUICKLY AND EASY TO CLEAN YOUR OFFICE AND HOUSE
             </p>
             <p className="font-work font-normal text-base text-[#292929] mt-4 max-w-[500px]">
-              Amet minim mollit non deserunt ullamco sit aliqua dolor do
-              consequat sunt nostrud amet. Amet minim mollit non deserunt
-              ullamco aliqua dolo ame.
+            At SEA Detaling, we believe that true luxury lies in the details. That’s why we offer a premium cleaning experience that goes beyond expectations, ensuring that your offices and luxury vehicles maintain their impeccable elegance.
+
+With a team of highly trained professionals and the latest cleaning technologies, we deliver meticulous care using high-end, eco-friendly products. Our tailored approach guarantees a pristine environment that reflects sophistication, excellence, and refinement.
+
+Because luxury begins with cleanliness, we provide a seamless, discreet, and top-tier service designed for those who appreciate the finest things in life.
             </p>
             <button
               onClick={() => navigate("/book-service")}

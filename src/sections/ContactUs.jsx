@@ -25,7 +25,7 @@ export default function ContactUs() {
             <a
               href="https://maps.app.goo.gl/fh9YV8Ki1vdzgxCs6"
               target="_blank"
-              className=" text-[#12153A] Aabhaya-libre-regular max-w-[500px] text-base hover:text-[#1A78F2]"
+              className=" text-[#12153A] text-lg Aabhaya-libre-regular max-w-[500px] text-base hover:text-[#1A78F2]"
             >
               365 murray ross parkway toronto canada
             </a>
@@ -36,7 +36,7 @@ export default function ContactUs() {
             <a
               href="https://wa.me/6476739380"
               target="_blank"
-              className="text-[#12153A] Abhaya-libre-regular text-base hover:text-[#1A78F2] my-4 md:my-0"
+              className="text-[#12153A] text-lg Abhaya-libre-regular text-base hover:text-[#1A78F2] my-4 md:my-0"
             >
               647-673-9380 /
             </a>
@@ -44,7 +44,7 @@ export default function ContactUs() {
             <a
               href="https://wa.me/6476730008"
               target="_blank"
-              className="text-[#12153A] Abhaya-libre-regular text-base hover:text-[#1A78F2] my-4 md:my-0"
+              className="text-[#12153A] Abhaya-libre-regular text-lg text-base hover:text-[#1A78F2] my-4 md:my-0"
             >
               647-673-0008
             </a>
@@ -56,7 +56,7 @@ export default function ContactUs() {
             <a
               href="mailto:info@detailingcar.com"
               target="_blank"
-              className="text-[#12153A] Abhaya-libre-regular text-base hover:text-[#1A78F2] "
+              className="text-[#12153A] text-lg Abhaya-libre-regular text-base hover:text-[#1A78F2] "
             >
               info@detailingcar.com
             </a>
