@@ -2,66 +2,70 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSearchParams, Link } from "react-router-dom";
-import image1 from "../assets/OurServices/01e36d90c7d4867eed0b3b77bc0d363f.jpeg";
-import image2 from "../assets/OurServices/3fc85fa235aef293febf4a65565953cb.jpeg";
-import image3 from "../assets/OurServices/f429094570dd7d1caebf84042038d7a5.jpeg";
-
+import image1 from "../assets/OurServices/service_1.jpeg";
+import image2 from "../assets/OurServices/service_2.jpg";
+import image3 from "../assets/OurServices/service_3.jpeg";
+import image4 from "../assets/OurServices/service_4.jpg";
+import image5 from "../assets/OurServices/service_5.webp";
+import image6 from "../assets/OurServices/service_6.jpeg";
+import image7 from "../assets/OurServices/service_7.jpg";
+import image8 from "../assets/OurServices/service_8.jpg";
 const servicesData = [
   {
     id: 1,
     type: "car",
-    title: "Headlight polishing",
-    description: "Begin by scheduling an initial consultation.",
+    title: "Headlight Restoration",
+    description: "Restore clarity and brightness to your headlights for safer nighttime driving.",
     image: image1,
   },
   {
     id: 2,
     type: "home",
-    title: "Steam Clean Upholstery",
-    description: "Begin by scheduling an initial consultation.",
+    title: "Steam Upholstery Cleaning",
+    description: "Deep-clean your car’s seats and fabric surfaces, removing dirt, stains, and odors.",
     image: image2,
   },
   {
     id: 3,
     type: "car",
-    title: "Dashboard Cleaning",
-    description: "We create design concepts tailored to your vision.",
+    title: "Dashboard & Interior Detailing",
+    description: "Give your dashboard and interior a fresh, polished look with professional cleaning and conditioning.",
     image: image3,
   },
   {
     id: 4,
     type: "car",
-    title: "Car polish & Wax",
-    description: "Together, we select materials, colors.",
-    image: image2,
+    title: "Car Polish & Wax",
+    description: "Enhance your car’s shine and protect its paint with a premium polish and wax treatment.",
+    image: image4,
   },
   {
     id: 5,
     type: "car",
-    title: "Leather Cleaning",
-    description: "We create design concepts tailored to your vision.",
-    image: image3,
+    title: "Leather Seat Conditioning",
+    description: "Keep your leather seats soft, clean, and crack-free with our conditioning service.",
+    image: image5,
   },
   {
     id: 6,
     type: "car",
-    title: " Detailed Door Panel",
-    description: "We maintain quality standards for the final result.",
-    image: image1,
+    title: "Door Panel Detailing",
+    description: "Thoroughly clean and restore your car’s door panels for a sleek and refined interior.",
+    image: image6,
   },
   {
     id: 7,
     type: "car",
-    title: "Wheel changing",
-    description: "We conduct final walkthroughs.",
-    image: image2,
+    title: "Tire & Wheel Maintenance",
+    description: "Ensure your wheels and tires stay clean and in top condition with expert care.",
+    image: image7,
   },
   {
     id: 8,
-    type: "home",
-    title: "Cup Holder Cleaning",
-    description: "make last minute adjustment.",
-    image: image1,
+    type: "car",
+    title: "Cup Holder & Console Cleaning",
+    description: "Remove dirt, dust, and spills from your cup holders and center console for a spotless interior.",
+    image: image8,
   },
 ];
 
