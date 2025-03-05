@@ -10,6 +10,7 @@ import image5 from "../assets/OurServices/service_5.jpg";
 import image6 from "../assets/OurServices/service_6.jpg";
 import image7 from "../assets/OurServices/service_7.jpg";
 import image8 from "../assets/OurServices/service_8.jpg";
+
 const servicesData = [
   {
     id: 1,
