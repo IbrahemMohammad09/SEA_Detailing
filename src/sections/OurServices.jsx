@@ -2,12 +2,12 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSearchParams, Link } from "react-router-dom";
-import image1 from "../assets/OurServices/service_1.jpeg";
+import image1 from "../assets/OurServices/service_1.jpg";
 import image2 from "../assets/OurServices/service_2.jpg";
-import image3 from "../assets/OurServices/service_3.jpeg";
-import image4 from "../assets/OurServices/service_4.jpg";
-import image5 from "../assets/OurServices/service_5.webp";
-import image6 from "../assets/OurServices/service_6.jpeg";
+import image3 from "../assets/OurServices/service_3.jpg";
+import image4 from "../assets/OurServices/service_4.jpeg";
+import image5 from "../assets/OurServices/service_5.jpg";
+import image6 from "../assets/OurServices/service_6.jpg";
 import image7 from "../assets/OurServices/service_7.jpg";
 import image8 from "../assets/OurServices/service_8.jpg";
 const servicesData = [
