@@ -124,7 +124,7 @@ const BookNow = () => {
                 {/* البريد الإلكتروني */}
                 <div className="flex items-start">
                   
-                  <a  href="mailto:info@detailingcar.com" className="text-sm lg:text-lg flex"><FaEnvelope className="text-white mr-4 text-xl" />demo@gmail.com</a>
+                  <a  href="mailto:info@sea-cardetailing.com" className="text-sm lg:text-md flex"><FaEnvelope className="text-white mr-4 text-xl" />info@sea-cardetailing.com</a>
                 </div>
 
                 {/* العنوان */}
@@ -137,7 +137,7 @@ const BookNow = () => {
                       className="Aabhaya-libre-regular max-w-[500px] text-base flex items-start "
                     >
                       <FaMapMarkerAlt className="text-white mr-4 text-3xl" />
-                      365 murray ross parkway toronto canada
+                      365 Murray Ross Pkwy, North York, ON, Canada
                     </a>
                   </p>
                 </div>

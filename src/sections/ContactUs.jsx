@@ -27,7 +27,7 @@ export default function ContactUs() {
               target="_blank"
               className=" text-[#12153A] text-lg Aabhaya-libre-regular max-w-[500px] text-base hover:text-[#1A78F2]"
             >
-              365 murray ross parkway toronto canada
+              365 Murray Ross Pkwy, North York, ON, Canada
             </a>
           </div>
 
@@ -54,11 +54,11 @@ export default function ContactUs() {
             <MdOutlineMail className="text-[#2B3641] w-5 hover:text-[#1A78F2]" />
 
             <a
-              href="mailto:info@detailingcar.com"
+              href="mailto:info@sea-cardetailing.com"
               target="_blank"
               className="text-[#12153A] text-lg Abhaya-libre-regular text-base hover:text-[#1A78F2] "
             >
-              info@detailingcar.com
+              info@sea-cardetailing.com
             </a>
           </div>
         </div>
