@@ -21,7 +21,7 @@ export default function ContactUs() {
         </div>
 
         <div className="flex flex-col justify-evenly p gap-2 px-2.5  sm:items-center md:flex-row  pl-8 contact-child2">
-          <div className="flex gap-2 items-start  md:pb-4 lg:w-1/3 ">
+          <div className="flex  items-start   ">
             <img className="w-4" src={locationicon} alt="location-icon" />
             <a
               href="https://maps.app.goo.gl/fh9YV8Ki1vdzgxCs6"
@@ -53,7 +53,6 @@ export default function ContactUs() {
 
           <div className="flex gap-2 items-center ">
             <MdOutlineMail className="text-[#2B3641] w-5 hover:text-[#1A78F2]" />
-
             <a
               href="mailto:info@sea-cardetailing.com"
               target="_blank"
