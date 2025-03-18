@@ -48,10 +48,10 @@ function HeroSection1() {
 
           {/* Titles */}
           <div className="space-y-2 -mt-20 md:-mt-20 lg:-mt-18">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-bold text-gray-900">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900">
               Your One Stop Cleaning
             </h1>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-bold text-[#1A78F2]">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#1A78F2]">
               Centre For All Needs
             </h2>
           </div>

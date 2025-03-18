@@ -91,8 +91,18 @@ function OurServices() {
         OUR <span className="text-blue-500">SERVICES</span>
       </h2>
       <h2 className="text-center mt-10 text-3xl md:text-5xl font-bold mb-8 abhaya-libre-bold">
-        Car <span className="text-blue-500">DETAILING &</span> clean house
+        Car <span className="text-blue-500">DETAILING </span> & House <span className="text-blue-500">CLEANING </span> 
       </h2>
+      <div className="flex flex-col md:flex-row gap-4 text-center mt-10 text-2xl md:text-3xl font-bold mb-8 abhaya-libre-bold">
+        <div>
+          <span className="text-blue-500">Car DETAILING </span> 
+          <h1>Expert detailing to restore, protect, and enhance your vehicle’s shine. Premium care for a showroom-quality finish.</h1>
+        </div>
+        <div>
+          <span className="text-blue-500">House CLEANING </span> 
+          <h1>Thorough, professional cleaning for a spotless and refreshed home. A healthier, cleaner space—hassle-free.</h1>
+        </div>
+      </div>
 
       <div className="flex justify-center mt-20 space-x-4 mb-8">
         {[

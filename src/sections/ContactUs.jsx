@@ -12,10 +12,11 @@ export default function ContactUs() {
           </p>
 
           <p className="abhaya-libre-regular px-2 md:px-0 text-2xl text-[#2B3641] mb-44 max-w-[670px]">
-            If you call during our business hours you’ll get through to us
-            instantly. If you email, we’ll usually get back to you within the
-            same business day. Our client services team members are eager to
-            answer all of your cleaning services questions.
+            If you call during our business hours, you'll be connected with us immediately. 
+            If you reach out via email, our team will typically respond within the same business day. 
+            Our dedicated client services team is committed to providing prompt, professional support and 
+            is always ready to assist you with any inquiries about our cleaning services. 
+            Your satisfaction is our priority, and we strive to deliver exceptional service with every interaction.
           </p>
         </div>
 
