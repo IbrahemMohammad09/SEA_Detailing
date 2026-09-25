@@ -1,35 +1,50 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import axios from "axios";
-import { Api } from "../constant/Api";
+
+import image1 from "../assets/image/portfolio/service_1.jpg";
+import image2 from "../assets/image/portfolio/service_2.jpg";
+import image3 from"../assets/image/portfolio/service_3.jpg";
+import image4 from "../assets/image/portfolio/service_4.jpeg";
+
+// import axios from "axios";
+// import { Api } from "../constant/Api";
+
+const mediaFiles = [
+  image1,
+  image2,
+  image3,
+  image4,
+];
 
 const OurPortfolio = () => {
   
-  const [mediaFiles, setMediaFiles] = useState([]);
-  const [selectedMedia, setSelectedMedia] = useState(null);
+  // const [mediaFiles, setMediaFiles] = useState([]);
+  const [selectedMedia, setSelectedMedia] = useState(mediaFiles[0]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(Api.GET.PICTURELIST);
-        const fetchedMedia = response.data.data.reverse();
-        setMediaFiles(fetchedMedia);
-
-        if (fetchedMedia.length > 0) {
-          setSelectedMedia(fetchedMedia[0].image); // تعيين العنصر الافتراضي
-        }
-      } catch (error) {
-        console.error("Error fetching media files:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  // دالة للتحقق مما إذا كان الملف فيديو
+   // دالة للتحقق مما إذا كان الملف فيديو
   const isVideo = (fileName) => {
     return /\.(mp4|webm|ogg)$/i.test(fileName);
   };
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get(Api.GET.PICTURELIST);
+  //       const fetchedMedia = response.data.data.reverse();
+  //       setMediaFiles(fetchedMedia);
+
+  //       if (fetchedMedia.length > 0) {
+  //         setSelectedMedia(fetchedMedia[0].image); // تعيين العنصر الافتراضي
+  //       }
+  //     } catch (error) {
+  //       console.error("Error fetching media files:", error);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
+
+ 
 
   return (
     <section
@@ -77,20 +92,20 @@ const OurPortfolio = () => {
             <motion.div
               key={index}
               className={`w-50 h-30 xl:w-30 rounded-md cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-md ${
-                selectedMedia === media.image ? "border-4 border-blue-500" : ""
+                selectedMedia === media ? "border-4 border-blue-500" : ""
               }`}
               whileHover={{ scale: 1.1 }}
-              onClick={() => setSelectedMedia(media.image)}
+              onClick={() => setSelectedMedia(media)}
             >
-              {isVideo(media.image) ? (
+              {isVideo(media) ? (
                 <video
-                  src={media.image}
+                  src={media}
                   className="w-full h-full object-cover rounded-md"
                   controls
                 />
               ) : (
                 <img
-                  src={media.image}
+                  src={media}
                   alt={`Work ${index + 1}`}
                   className="w-full h-full object-cover rounded-md"
                 />

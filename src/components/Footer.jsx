@@ -144,7 +144,7 @@ export default function Footer() {
             style={{ color: "#2fb0cd" }}
             target="_blank"
             rel="noopener noreferrer"
-            href="https://sparkengdev.com/"
+            href="https://sparkcompany.tech/"
           >
             SPARK
           </a>{" "}
