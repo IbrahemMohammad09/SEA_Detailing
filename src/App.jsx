@@ -23,7 +23,7 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/SEA_Detailing">
       <Routes>
         <Route index element={isLoading ? <GiftLoader /> : <HomePage />} />
         {/* <Route path="/SEA_Detailing" element={isLoading ? <GiftLoader /> : <HomePage />} /> */}
