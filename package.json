@@ -18,7 +18,7 @@
     "lazy": "^1.0.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-helmet-async": "^2.0.5",
+    "react-helmet-async": "^3.0.0",
     "react-icons": "^5.4.0",
     "react-redux": "^9.2.0",
     "react-router": "^7.1.5",
