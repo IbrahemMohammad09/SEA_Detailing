@@ -25,7 +25,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={isLoading ? <GiftLoader /> : <HomePage />} />
+        {/* <Route index element={isLoading ? <GiftLoader /> : <HomePage />} /> */}
+        <Route path="/SEA_Detailing" element={isLoading ? <GiftLoader /> : <HomePage />} />
         <Route path="/book-service" element={<BookService />} />
         <Route path="/order-successful" element={<SuccessfulMessage />} />
 

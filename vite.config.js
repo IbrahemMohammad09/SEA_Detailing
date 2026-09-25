@@ -38,6 +38,5 @@ export default defineConfig({
     //   }
     // })
   ],
-   base: "//",
-  // base: "/SEA_Detailing/",
+  base: "/SEA_Detailing/",
 });
