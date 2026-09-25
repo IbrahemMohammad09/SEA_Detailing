@@ -137,7 +137,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="bg-[#F6F6F6] py-8 mt-14 font-nunito">
+      {/* <div className="bg-[#F6F6F6] py-8 mt-14 font-nunito">
         <p className="text-black font-normal text-base text-center">
           © Copyright by{" "}
           <a
@@ -150,7 +150,7 @@ export default function Footer() {
           </a>{" "}
           – All rights reserved.
         </p>
-      </div>
+      </div> */}
     </>
   );
 }
