@@ -3,15 +3,12 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { lazy, useState, useEffect } from "react";
 
 
-
 const GiftLoader = lazy(() => import("./components/GifLoader"));
 const HomePage = lazy(() => import("./pages/HomePage"));
 const BookService = lazy(() => import("./pages/BookService"));
 const SuccessfulMessage = lazy(() => import("./pages/SuccessfulMessage"));
 
-
 const NotFoundPage = lazy (()=> import('./pages/Error'))
-
 
 
 function App() {
