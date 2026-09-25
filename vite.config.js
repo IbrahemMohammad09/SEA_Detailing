@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 // import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
-    base: "/SEA_Detailing/",
+
   plugins: [
     react(),
     tailwindcss(),
@@ -37,5 +37,6 @@ export default defineConfig({
     //     enabled: true, // لتجربة PWA في وضع التطوير
     //   }
     // })
-  ]
+  ],
+  base: "/SEA_Detailing/",
 });
